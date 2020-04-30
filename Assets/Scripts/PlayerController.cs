@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     public float currentDashDuration;
     public float dashDuration;
+    public bool dashing;
 
     [Header("Reaper Slash Variables")]
     //Set Up
@@ -65,115 +66,139 @@ public class PlayerController : MonoBehaviour
         currentDashDuration = dashDuration;
         doubleJumpUsed = false;
         reaperSlashActivated = false;
+        dashing = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Ground Dectection
-        isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, ground);
+        if (!dashing)
+        {
+            //Ground Dectection
+            isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, ground);
 
-        //Manual Movement
-        float h = Input.GetAxisRaw("Horizontal");
+            //Manual Movement
+            float h = Input.GetAxisRaw("Horizontal");
 
-        rb.velocity = new Vector2(moveSpeed * h, rb.velocity.y);
-        if (h > 0) //Face Forward
-        {
-            transform.localScale = new Vector2(1f, transform.localScale.y);
-        }
-        else if (h < 0)
-        {
-            transform.localScale = new Vector2(-1f, transform.localScale.y);
-        }
+            rb.velocity = new Vector2(moveSpeed * h, rb.velocity.y);
+            if (h > 0) //Face Forward
+            {
+                transform.localScale = new Vector2(1f, transform.localScale.y);
+            }
+            else if (h < 0)
+            {
+                transform.localScale = new Vector2(-1f, transform.localScale.y);
+            }
 
-        //Jumping
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-        }
-        else if (Input.GetButtonDown("Jump") && !isGrounded && !doubleJumpUsed)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-            doubleJumpUsed = true;
-        }
-        //Reset Double Jump when Grounded
-        if (isGrounded)
-        {
-            doubleJumpUsed = false;
-        }
+            //Jumping
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            }
+            else if (Input.GetButtonDown("Jump") && !isGrounded && !doubleJumpUsed)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                doubleJumpUsed = true;
+            }
+            //Reset Double Jump when Grounded
+            if (isGrounded)
+            {
+                doubleJumpUsed = false;
+            }
 
-        //Attacking
-        if (Time.time >= nextAttackTime)
-        {
-            if (Input.GetKey(KeyCode.Mouse0))
+            //Attacking
+            if (Time.time >= nextAttackTime)
+            {
+                if (Input.GetKey(KeyCode.Mouse0))
+                {
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
+            }
+
+            //Uppercut
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
             }
-        }
 
-        //Uppercut
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Attack();
-        }
-
-        //Reaper Slash Setup
-        if (Input.GetKeyDown(KeyCode.Mouse1) && !reaperSlashActivated)
-        {
-            reaperSlashActivated = true;
-
-            //Slow Down Time
-            Time.timeScale = slowDownFactor;
-
-            //Create Area for Player to choose ReaperSlashTarget
-            reaperSlashArea.SetActive(true);
-            reaperSlashArea.transform.localScale = new Vector3(reaperSlashRadius, transform.localScale.y, transform.localScale.z);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Mouse1) && reaperSlashActivated) //This is for Debugging only
-        {
-            reaperSlashActivated = false;
-
-            //Reset Time to normal
-            Time.timeScale = 1f;
-
-            //Reset ReaperSlash
-            reaperSlashArea.SetActive(false);
-        }
-        //Execute Reaper Slash
-        if (reaperSlashActivated && dashTargetSelected)
-        {
-            currentSlashDuration -= Time.deltaTime;
-
-            if (currentSlashDuration > 0)
+            //Reaper Slash Setup
+            if (Input.GetKeyDown(KeyCode.Mouse1) && !reaperSlashActivated)
             {
-                rb.MovePosition(reaperSlashTarget);
-                if (reaperSlashTarget.x > transform.position.x)
+                reaperSlashActivated = true;
+
+                //Slow Down Time
+                Time.timeScale = slowDownFactor;
+
+                //Create Area for Player to choose ReaperSlashTarget
+                reaperSlashArea.SetActive(true);
+                reaperSlashArea.transform.localScale = new Vector3(reaperSlashRadius, transform.localScale.y, transform.localScale.z);
+
+            }
+            else if (Input.GetKeyDown(KeyCode.Mouse1) && reaperSlashActivated) //This is for Debugging only
+            {
+                reaperSlashActivated = false;
+
+                //Reset Time to normal
+                Time.timeScale = 1f;
+
+                //Reset ReaperSlash
+                reaperSlashArea.SetActive(false);
+            }
+            //Execute Reaper Slash
+            if (reaperSlashActivated && dashTargetSelected)
+            {
+                currentSlashDuration -= Time.deltaTime;
+
+                if (currentSlashDuration > 0)
                 {
-                    transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
+                    rb.MovePosition(reaperSlashTarget);
+                    if (reaperSlashTarget.x > transform.position.x)
+                    {
+                        transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
+                    }
+                    else if (reaperSlashTarget.x < transform.position.x)
+                    {
+                        transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
+                    }
                 }
-                else if (reaperSlashTarget.x < transform.position.x)
+                else
                 {
-                    transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
+                    if (currentSlashDuration <= 0)
+                    {
+                        dashTargetSelected = false;
+                        reaperSlashActivated = false;
+                        rb.velocity = Vector2.zero;
+                        currentSlashDuration = reaperSlashDuration;
+                    }
                 }
             }
-            else
+            //Dash
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (currentSlashDuration <= 0)
-                {
-                    dashTargetSelected = false;
-                    reaperSlashActivated = false;
-                    rb.velocity = Vector2.zero;
-                    currentSlashDuration = reaperSlashDuration;
-                }
+                currentDashDuration = dashDuration;
+                dashing = true;
             }
         }
-
-        //Dash
-        if (Input.GetKeyDown(KeyCode.Q))
+        else
         {
+            if (currentDashDuration >= 0)
+            {
+                currentDashDuration -= Time.deltaTime;
 
+                if (transform.localScale.x > 0)
+                {
+                    rb.velocity = Vector2.right * dashSpeed;
+                }
+                else if (transform.localScale.x < 0)
+                {
+                    rb.velocity = Vector2.left * dashSpeed;
+                }
+            }
+            else if (currentDashDuration <= 0)
+            {
+                dashing = false;
+            }
         }
     }
 
