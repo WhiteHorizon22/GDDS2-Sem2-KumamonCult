@@ -35,6 +35,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Uppercut")]
     public float uppercutAirBoost;
+    public float uppercutKnockback;
+
+    [Header("Dash")]
+    public float dashSpeed;
+    public float currentDashDuration;
+    public float dashDuration;
 
     [Header("Reaper Slash Variables")]
     //Set Up
@@ -43,12 +49,11 @@ public class PlayerController : MonoBehaviour
     //Area of Effect
     public GameObject reaperSlashArea;
     public float reaperSlashRadius;
-    public Vector3 reaperSlashTarget;
+    public Vector2  reaperSlashTarget;
     //Dash Execution
     public bool dashTargetSelected;
     public float reaperSlashDuration;
     private float currentSlashDuration;
-    public float reaperSlashSpeed;
 
 
     // Start is called before the first frame update
@@ -57,6 +62,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         levelManager = FindObjectOfType<LevelManager>();
         currentSlashDuration = reaperSlashDuration;
+        currentDashDuration = dashDuration;
         doubleJumpUsed = false;
         reaperSlashActivated = false;
     }
@@ -109,7 +115,7 @@ public class PlayerController : MonoBehaviour
         //Uppercut
         if (Input.GetKeyDown(KeyCode.E))
         {
-
+            Attack();
         }
 
         //Reaper Slash Setup
@@ -119,9 +125,6 @@ public class PlayerController : MonoBehaviour
 
             //Slow Down Time
             Time.timeScale = slowDownFactor;
-
-            //Set Up Timer
-
 
             //Create Area for Player to choose ReaperSlashTarget
             reaperSlashArea.SetActive(true);
@@ -146,6 +149,14 @@ public class PlayerController : MonoBehaviour
             if (currentSlashDuration > 0)
             {
                 rb.MovePosition(reaperSlashTarget);
+                if (reaperSlashTarget.x > transform.position.x)
+                {
+                    transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
+                }
+                else if (reaperSlashTarget.x < transform.position.x)
+                {
+                    transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
+                }
             }
             else
             {
@@ -158,6 +169,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        //Dash
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+        }
     }
 
     void Attack()
@@ -169,7 +186,16 @@ public class PlayerController : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             Debug.Log("we hit" + enemy.name);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
+            }
         }
+    }
+    void Dash()
+    {
+
     }
 
     private void OnDrawGizmosSelected()

@@ -165,7 +165,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.011367083, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -176,7 +176,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.70445013, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &43151861
 SpriteRenderer:
@@ -936,12 +936,12 @@ PrefabInstance:
     - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
       propertyPath: reaperSlashDuration
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
       propertyPath: reaperSlashSpeed
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
@@ -967,6 +967,36 @@ PrefabInstance:
         type: 3}
       propertyPath: slashTimeLimit
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: dashTargetSelected
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: uppercutKnockback
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: uppercutAirBoost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: dashDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: dashDuration
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8706028202019520145, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
