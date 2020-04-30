@@ -265,7 +265,6 @@ public class PlayerController : MonoBehaviour
         //Apply Damage to Detected Enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("we hit" + enemy.name);
 
             //If using Uppercut
             if (Input.GetKeyDown(KeyCode.E))
