@@ -37,6 +37,14 @@ public class PlayerController : MonoBehaviour
     public float uppercutAirBoost;
     public float uppercutKnockback;
 
+    [Header("GroundPound & Slam")]
+    public float poundDownForce;
+    public float poundDownKnockback;
+    public float slamKnockback;
+    public bool usingGroundPound;
+    public Transform groundPoundCheck;
+
+
     [Header("Dash")]
     public float dashSpeed;
     public float currentDashDuration;
@@ -67,16 +75,17 @@ public class PlayerController : MonoBehaviour
         doubleJumpUsed = false;
         reaperSlashActivated = false;
         dashing = false;
+        usingGroundPound = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!dashing)
-        {
-            //Ground Dectection
-            isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, ground);
+        //Ground Dectection
+        isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, ground);
 
+        if (!dashing && !usingGroundPound)
+        {
             //Manual Movement
             float h = Input.GetAxisRaw("Horizontal");
 
@@ -114,12 +123,29 @@ public class PlayerController : MonoBehaviour
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
-            }
 
-            //Uppercut
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Attack();
+                //Uppercut
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    rb.AddForce(Vector2.up * uppercutAirBoost);
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
+
+                //Groundpound and Slam
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    if (isGrounded)
+                    {
+                        Attack();
+                        nextAttackTime = Time.time + 1f / attackRate;
+                    }
+                    else if (!isGrounded)
+                    {
+                        usingGroundPound = true;
+                        nextAttackTime = Time.time + 1f / attackRate;
+                    }
+                }
             }
 
             //Reaper Slash Setup
@@ -132,7 +158,7 @@ public class PlayerController : MonoBehaviour
 
                 //Create Area for Player to choose ReaperSlashTarget
                 reaperSlashArea.SetActive(true);
-                reaperSlashArea.transform.localScale = new Vector3(reaperSlashRadius, transform.localScale.y, transform.localScale.z);
+                reaperSlashArea.transform.localScale = new Vector3(reaperSlashRadius, reaperSlashRadius, transform.localScale.z);
 
             }
             else if (Input.GetKeyDown(KeyCode.Mouse1) && reaperSlashActivated) //This is for Debugging only
@@ -180,7 +206,7 @@ public class PlayerController : MonoBehaviour
                 dashing = true;
             }
         }
-        else
+        else if (dashing)
         {
             if (currentDashDuration >= 0)
             {
@@ -200,6 +226,35 @@ public class PlayerController : MonoBehaviour
                 dashing = false;
             }
         }
+        else if (usingGroundPound)
+        {
+            //Detect Enemies in range of attack
+            Collider2D[] poundedEnemies = Physics2D.OverlapCircleAll(groundPoundCheck.position, 2f, attackable);
+
+            //Apply Damage to Detected Enemies
+            foreach (Collider2D enemy in poundedEnemies)
+            {
+                Debug.Log("we hit" + enemy.name);
+
+                if (enemy.transform.position.x > this.transform.position.x)
+                {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback);
+                }
+                else if (enemy.transform.position.x < this.transform.position.x)
+                {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback);
+                }
+            }
+
+            if (!isGrounded)
+            {
+                rb.velocity = Vector2.down * poundDownForce;
+            }
+            else if (isGrounded)
+            {
+                usingGroundPound = false;
+            }
+        }
     }
 
     void Attack()
@@ -212,19 +267,31 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("we hit" + enemy.name);
 
+            //If using Uppercut
             if (Input.GetKeyDown(KeyCode.E))
             {
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
             }
-        }
-    }
-    void Dash()
-    {
 
+            //Is using Slam
+            if (Input.GetKeyDown(KeyCode.S) && isGrounded)
+            {
+                if (enemy.transform.position.x > this.transform.position.x)
+                {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * slamKnockback);
+                }
+                else if (enemy.transform.position.x < this.transform.position.x)
+                {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * slamKnockback);
+                }
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(attackRange.position, attackRangeRadius);
+        Gizmos.DrawWireSphere(groundcheck.position, groundcheckRadius);
+        Gizmos.DrawWireSphere(groundPoundCheck.position, 2f);
     }
 }
