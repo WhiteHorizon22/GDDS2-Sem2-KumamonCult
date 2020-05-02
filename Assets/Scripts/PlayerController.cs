@@ -28,10 +28,13 @@ public class PlayerController : MonoBehaviour
     float nextAttackTime = 0f;
 
     [Header("Damage")]
-    public float standardAttackDamage;
-    public float uppercutDamage;
-    public float dashDamage;
-    public float reaperSlashDamage;
+    public int standardAttackDamage;
+    public int standardAttackBoost;
+    public int standardAttackKnockback;
+    public int uppercutDamage;
+    public int dashDamage;
+    public int slamDamage;
+    public int reaperSlashDamage;
 
     [Header("Uppercut")]
     public float uppercutAirBoost;
@@ -43,7 +46,6 @@ public class PlayerController : MonoBehaviour
     public float slamKnockback;
     public bool usingGroundPound;
     public Transform groundPoundCheck;
-
 
     [Header("Dash")]
     public float dashSpeed;
@@ -63,7 +65,6 @@ public class PlayerController : MonoBehaviour
     public bool dashTargetSelected;
     public float reaperSlashDuration;
     private float currentSlashDuration;
-
 
     // Start is called before the first frame update
     void Start()
@@ -265,11 +266,29 @@ public class PlayerController : MonoBehaviour
         //Apply Damage to Detected Enemies
         foreach(Collider2D enemy in hitEnemies)
         {
+            //If Using basic Attack
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackBoost);
+                this.rb.AddForce(Vector2.up * standardAttackBoost);
+                if (enemy.transform.position.x > this.transform.position.x)
+                {
+                    this.rb.AddForce(Vector2.right * 20 * standardAttackKnockback);
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * standardAttackKnockback);
+                }
+                else if (enemy.transform.position.x < this.transform.position.x)
+                {
+                    this.rb.AddForce(Vector2.left * 20 * standardAttackKnockback);
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * standardAttackKnockback);
+                }
+                enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+            }
 
             //If using Uppercut
             if (Input.GetKeyDown(KeyCode.E))
             {
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
+                enemy.GetComponent<EnemyController>().TakeDamage(uppercutDamage);
             }
 
             //Is using Slam
@@ -283,6 +302,8 @@ public class PlayerController : MonoBehaviour
                 {
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * slamKnockback);
                 }
+
+                enemy.GetComponent<EnemyController>().TakeDamage(slamDamage);
             }
         }
     }
