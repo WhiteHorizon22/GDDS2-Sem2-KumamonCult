@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour
                     }
                     else if (!isGrounded)
                     {
+                        Attack();
                         usingGroundPound = true;
                         nextAttackTime = Time.time + 1f / attackRate;
                     }
@@ -237,19 +238,28 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("we hit" + enemy.name);
 
-                if (enemy.transform.position.x > this.transform.position.x)
+                if (enemy.GetComponent<EnemyController>().isGrounded == false)
                 {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback);
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.down * poundDownForce * 2);
                 }
-                else if (enemy.transform.position.x < this.transform.position.x)
+                else
                 {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback);
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
+
+                    if (enemy.transform.position.x > this.transform.position.x)
+                    {
+                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback);
+                    }
+                    else if (enemy.transform.position.x < this.transform.position.x)
+                    {
+                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback);
+                    }
                 }
             }
 
             if (!isGrounded)
             {
-                rb.velocity = Vector2.down * poundDownForce;
+                rb.velocity = Vector2.down * poundDownForce/2;
             }
             else if (isGrounded)
             {
@@ -269,17 +279,19 @@ public class PlayerController : MonoBehaviour
             //If Using basic Attack
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackBoost);
-                this.rb.AddForce(Vector2.up * standardAttackBoost);
+                if (this.isGrounded == false)
+                {
+                    this.rb.AddForce(Vector2.up * standardAttackBoost);
+                }
                 if (enemy.transform.position.x > this.transform.position.x)
                 {
-                    this.rb.AddForce(Vector2.right * 20 * standardAttackKnockback);
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * standardAttackKnockback);
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackKnockback);
                 }
                 else if (enemy.transform.position.x < this.transform.position.x)
                 {
-                    this.rb.AddForce(Vector2.left * 20 * standardAttackKnockback);
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * standardAttackKnockback);
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackBoost);
                 }
                 enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
             }
@@ -302,8 +314,28 @@ public class PlayerController : MonoBehaviour
                 {
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * slamKnockback);
                 }
-
                 enemy.GetComponent<EnemyController>().TakeDamage(slamDamage);
+            }
+
+            if (Input.GetKeyDown(KeyCode.S) && !isGrounded && enemy.GetComponent<EnemyController>().isGrounded == false)
+            {
+                if (enemy.GetComponent<EnemyController>().isGrounded == false)
+                {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.down * poundDownForce * 2);
+                }
+                else if (enemy.GetComponent<EnemyController>().isGrounded == true)
+                {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
+
+                    if (enemy.transform.position.x > this.transform.position.x)
+                    {
+                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback);
+                    }
+                    else if (enemy.transform.position.x < this.transform.position.x)
+                    {
+                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback);
+                    }
+                }
             }
         }
     }
