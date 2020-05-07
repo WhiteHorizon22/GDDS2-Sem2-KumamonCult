@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     LevelManager levelManager;
 
+    [Header("Health")]
+    public int maxHealth;
+    public int currentHealth;
+
     [Header("Movement")]
     public bool isMoving;
     public float moveSpeed;
@@ -236,24 +240,15 @@ public class PlayerController : MonoBehaviour
             //Apply Damage to Detected Enemies
             foreach (Collider2D enemy in poundedEnemies)
             {
-                Debug.Log("we hit" + enemy.name);
+                enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
 
-                if (enemy.GetComponent<EnemyController>().isGrounded == false)
+                if (enemy.transform.position.x > this.transform.position.x)
                 {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.down * poundDownForce * 2);
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback/2);
                 }
-                else
+                else if (enemy.transform.position.x < this.transform.position.x)
                 {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
-
-                    if (enemy.transform.position.x > this.transform.position.x)
-                    {
-                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback);
-                    }
-                    else if (enemy.transform.position.x < this.transform.position.x)
-                    {
-                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback);
-                    }
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback/2);
                 }
             }
 
@@ -270,6 +265,8 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
+        attackRange.GetComponent<AudioSource>().Play();
+
         //Detect Enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackRange.position, attackRangeRadius, attackable);
         
@@ -316,28 +313,24 @@ public class PlayerController : MonoBehaviour
                 }
                 enemy.GetComponent<EnemyController>().TakeDamage(slamDamage);
             }
-
-            if (Input.GetKeyDown(KeyCode.S) && !isGrounded && enemy.GetComponent<EnemyController>().isGrounded == false)
-            {
-                if (enemy.GetComponent<EnemyController>().isGrounded == false)
-                {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.down * poundDownForce * 2);
-                }
-                else if (enemy.GetComponent<EnemyController>().isGrounded == true)
-                {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
-
-                    if (enemy.transform.position.x > this.transform.position.x)
-                    {
-                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback);
-                    }
-                    else if (enemy.transform.position.x < this.transform.position.x)
-                    {
-                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback);
-                    }
-                }
-            }
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        //hurt
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
