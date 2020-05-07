@@ -60,43 +60,48 @@ public class EnemyController : MonoBehaviour
         //Sight
         playerInSight = Physics2D.OverlapCircle(sight.position, sightDistance, playerLayer);
 
-        if (stunned)
+        if (!stunned)
         {
-            if (stunTime >= 0)
+            if (playerInRange)
             {
-                stunTime -= Time.time;
+                if (Time.time >= nextAttackTime && isGrounded)
+                {
+                    anim.SetBool("chase", false);
+                    anim.SetTrigger("attack");
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
+            }
+            else if (playerInSight && !stunned)
+            {
+                if (player.transform.position.x > attackRange.transform.position.x)
+                {
+                    transform.localScale = new Vector3(2, 2, transform.localScale.z);
+                    anim.SetBool("chase", true);
+                    rb.velocity = new Vector2(speed, rb.velocity.y);
+                }
+                else if (player.transform.position.x < attackRange.transform.position.x)
+                {
+                    transform.localScale = new Vector3(-2, 2, transform.localScale.z);
+                    anim.SetBool("chase", true);
+                    rb.velocity = new Vector2(-speed, rb.velocity.y);
+                }
+                else
+                {
+                    anim.SetBool("chase", false);
+                }
+            }
+            
+        }
+        else
+        {
+            if (stunTime > 0)
+            {
+                stunTime -= Time.deltaTime;
             }
             else
             {
-                stunTime = 0.5f;
+                stunTime = 2f;
                 stunned = false;
-            }
-        }
-        else if (playerInRange)
-        {
-            if (Time.time >= nextAttackTime && isGrounded)
-            {
-                anim.SetTrigger("attack");
-                nextAttackTime = Time.time + 1f / attackRate;
-            }
-        }
-
-        if (playerInSight && !stunned)
-        {
-            if (player.transform.position.x > transform.position.x)
-            {
-                anim.SetBool("chase", true);
-                rb.velocity = new Vector2(speed, rb.velocity.y);
-            }
-            else if (player.transform.position.x < transform.position.x)
-            {
-                anim.SetBool("chase", true);
-                rb.velocity = new Vector2(-speed, rb.velocity.y);
-            }
-            else
-            {
-                anim.SetBool("chase", false);
-                rb.velocity = Vector2.zero;
             }
         }
     }

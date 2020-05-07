@@ -246,11 +246,11 @@ public class PlayerController : MonoBehaviour
             {
                 currentDashDuration -= Time.deltaTime;
 
-                if (transform.localScale.x < 0)
+                if (transform.localScale.x > 0)
                 {
                     rb.velocity = Vector2.right * dashSpeed;
                 }
-                else if (transform.localScale.x > 0)
+                else if (transform.localScale.x < 0)
                 {
                     rb.velocity = Vector2.left * dashSpeed;
                 }
