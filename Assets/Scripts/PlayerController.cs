@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     //References
     Rigidbody2D rb;
     LevelManager levelManager;
+    Animator anim;
 
     [Header("Health")]
     public int maxHealth;
@@ -23,6 +24,12 @@ public class PlayerController : MonoBehaviour
     public float groundcheckRadius;
     public LayerMask ground;
     public bool isGrounded;
+
+    [Header("Knockback")]
+    public bool knockedBack;
+    public float knockbackDuration;
+    public float knockbackStrength;
+    public float originKnockbackDuration;
 
     [Header("Attack Range")]
     public Transform attackRange;
@@ -75,12 +82,14 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         levelManager = FindObjectOfType<LevelManager>();
+        anim = GetComponent<Animator>();
         currentSlashDuration = reaperSlashDuration;
         currentDashDuration = dashDuration;
         doubleJumpUsed = false;
         reaperSlashActivated = false;
         dashing = false;
         usingGroundPound = false;
+        knockedBack = false;
     }
 
     // Update is called once per frame
@@ -89,7 +98,16 @@ public class PlayerController : MonoBehaviour
         //Ground Dectection
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, ground);
 
-        if (!dashing && !usingGroundPound)
+        if (isGrounded)
+        {
+            anim.SetBool("IsGrounded", true);
+        }
+        else
+        {
+            anim.SetBool("IsGrounded", false);
+        }
+
+        if (!dashing && !usingGroundPound && !knockedBack)
         {
             //Manual Movement
             float h = Input.GetAxisRaw("Horizontal");
@@ -102,6 +120,15 @@ public class PlayerController : MonoBehaviour
             else if (h < 0)
             {
                 transform.localScale = new Vector2(-1f, transform.localScale.y);
+            }
+
+            if (h == 0)
+            {
+                anim.SetBool("IsMoving", false);
+            }
+            else
+            {
+                anim.SetBool("IsMoving", true);
             }
 
             //Jumping
@@ -121,7 +148,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Attacking
-            if (Time.time >= nextAttackTime)
+            if (Time.time >= nextAttackTime & !reaperSlashActivated)
             {
                 if (Input.GetKey(KeyCode.Mouse0))
                 {
@@ -184,6 +211,7 @@ public class PlayerController : MonoBehaviour
 
                 if (currentSlashDuration > 0)
                 {
+                    Attack();
                     rb.MovePosition(reaperSlashTarget);
                     if (reaperSlashTarget.x > transform.position.x)
                     {
@@ -212,17 +240,17 @@ public class PlayerController : MonoBehaviour
                 dashing = true;
             }
         }
-        else if (dashing)
+        else if (dashing & !knockedBack)
         {
             if (currentDashDuration >= 0)
             {
                 currentDashDuration -= Time.deltaTime;
 
-                if (transform.localScale.x > 0)
+                if (transform.localScale.x < 0)
                 {
                     rb.velocity = Vector2.right * dashSpeed;
                 }
-                else if (transform.localScale.x < 0)
+                else if (transform.localScale.x > 0)
                 {
                     rb.velocity = Vector2.left * dashSpeed;
                 }
@@ -232,7 +260,7 @@ public class PlayerController : MonoBehaviour
                 dashing = false;
             }
         }
-        else if (usingGroundPound)
+        else if (usingGroundPound & !knockedBack)
         {
             //Detect Enemies in range of attack
             Collider2D[] poundedEnemies = Physics2D.OverlapCircleAll(groundPoundCheck.position, 2f, attackable);
@@ -259,6 +287,33 @@ public class PlayerController : MonoBehaviour
             else if (isGrounded)
             {
                 usingGroundPound = false;
+            }
+        }
+        //Knockback
+        else
+        {
+            if (knockbackDuration >= 0)
+            {
+                anim.SetTrigger("Hurt");
+                reaperSlashActivated = false;
+                Time.timeScale = 1f;
+                reaperSlashArea.SetActive(false);
+
+                knockbackDuration -= Time.deltaTime;
+
+                if (transform.localScale.x < 0)
+                {
+                    rb.AddForce(new Vector2(1 * knockbackStrength, knockbackStrength/2));
+                }
+                else if (transform.localScale.x > 0)
+                {
+                    rb.AddForce(new Vector2(-1 * knockbackStrength, knockbackStrength/2));
+                }
+            }
+            else if (knockbackDuration <= 0)
+            {
+                knockedBack = false;
+                knockbackDuration = originKnockbackDuration;
             }
         }
     }
@@ -318,14 +373,18 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-
-        //hurt
-
-        if (currentHealth <= 0)
+        if (!knockedBack)
         {
-            Die();
+            currentHealth -= damage;
+
+            //hurt
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
+        knockedBack = true;
     }
 
     void Die()
