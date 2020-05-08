@@ -88,6 +88,7 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     anim.SetBool("chase", false);
+                    rb.velocity = Vector2.zero;
                 }
             }
             
