@@ -55,25 +55,21 @@ public class RangedEnemy : MonoBehaviour
 
         if (!stunned)
         {
+            if (player.transform.position.x > transform.position.x)
+            {
+                transform.localScale = new Vector3(2, 2, transform.localScale.z);
+            }
+            else if (player.transform.position.x < transform.position.x)
+            {
+                transform.localScale = new Vector3(-2, 2, transform.localScale.z);
+            }
+
             if (playerInSight)
             {
-                if (Time.time >= nextAttackTime && isGrounded)
+                if (Time.time >= nextAttackTime && isGrounded && !stunned)
                 {
                     anim.SetTrigger("Attack");
                     nextAttackTime = Time.time + 1f / attackRate;
-                }
-                else if (playerInSight && !stunned)
-                {
-                    rb.velocity = Vector2.zero;
-                }
-
-                if (player.transform.position.x > transform.position.x)
-                {
-                    transform.localScale = new Vector3(2, 2, transform.localScale.z);
-                }
-                else if (player.transform.position.x < transform.position.x)
-                {
-                    transform.localScale = new Vector3(-2, 2, transform.localScale.z);
                 }
             }
         }
@@ -109,7 +105,7 @@ public class RangedEnemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy Died!");
+        Destroy(gameObject);
         //Die animation
 
         //Disable the Enemy

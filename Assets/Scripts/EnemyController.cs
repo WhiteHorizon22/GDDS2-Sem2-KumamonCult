@@ -48,6 +48,8 @@ public class EnemyController : MonoBehaviour
         currentHealth = maxHealth;
         player = FindObjectOfType<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
+
+        stunned = false;
     }
 
     // Update is called once per frame
@@ -94,8 +96,10 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            print("stunned");
             if (stunTime > 0)
             {
+                anim.SetBool("chase", false);
                 stunTime -= Time.deltaTime;
             }
             else
@@ -124,7 +128,7 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy Died!");
+        Destroy(gameObject);
         //Die animation
 
         //Disable the Enemy

@@ -16,8 +16,6 @@ public class EnemyBullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-
-
         player = FindObjectOfType<PlayerController>();
 
         if (player.gameObject.activeInHierarchy == true)
@@ -26,6 +24,11 @@ public class EnemyBullet : MonoBehaviour
 
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         }
+    }
+
+    void Update()
+    {
+        Destroy(gameObject, 2);
     }
 
     void OnTriggerEnter2D(Collider2D other)

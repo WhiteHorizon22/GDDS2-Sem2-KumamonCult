@@ -26,7 +26,9 @@ public class Shoot : StateMachineBehaviour
     {
         if (rangedEnemy.playerInSight)
         {
-            Instantiate(rangedEnemy.ammo, animator.transform);
+            Vector3 pos = animator.transform.position;
+            Quaternion rotation = animator.transform.rotation;
+            Instantiate(rangedEnemy.ammo, pos, rotation);
         }
     }
 

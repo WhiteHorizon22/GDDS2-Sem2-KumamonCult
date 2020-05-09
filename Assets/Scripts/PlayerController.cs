@@ -283,6 +283,21 @@ public class PlayerController : MonoBehaviour
                 {
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback/2);
                 }
+
+                if (enemy.name.Contains("Melee"))
+                {
+                    if (enemy.GetComponent<EnemyController>().isGrounded)
+                    {
+                        enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                    }
+                }
+                else if (enemy.name.Contains("Ranged"))
+                {
+                    if (enemy.GetComponent<RangedEnemy>().isGrounded)
+                    {
+                        enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
+                    }
+                }
             }
 
             if (!isGrounded)
@@ -297,6 +312,7 @@ public class PlayerController : MonoBehaviour
         //Knockback
         else
         {
+            rb.velocity = Vector2.zero;
             if (knockbackDuration >= 0)
             {
                 canMove = false;
@@ -309,11 +325,11 @@ public class PlayerController : MonoBehaviour
 
                 if (transform.localScale.x < 0)
                 {
-                    rb.AddForce(new Vector2(1 * knockbackStrength, knockbackStrength/2));
+                    rb.AddForce(new Vector2(1 * knockbackStrength, knockbackStrength));
                 }
                 else if (transform.localScale.x > 0)
                 {
-                    rb.AddForce(new Vector2(-1 * knockbackStrength, knockbackStrength/2));
+                    rb.AddForce(new Vector2(-1 * knockbackStrength, knockbackStrength));
                 }
             }
             else if (knockbackDuration <= 0)
@@ -352,7 +368,14 @@ public class PlayerController : MonoBehaviour
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * standardAttackKnockback);
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackBoost);
                 }
-                enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                if (enemy.name.Contains("Melee"))
+                {
+                    enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                }
+                else if (enemy.name.Contains("Ranged"))
+                {
+                    enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
+                }
             }
 
             //If using Uppercut
@@ -360,6 +383,14 @@ public class PlayerController : MonoBehaviour
             {
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
                 enemy.GetComponent<EnemyController>().TakeDamage(uppercutDamage);
+                if (enemy.name.Contains("Melee"))
+                {
+                    enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                }
+                else if (enemy.name.Contains("Ranged"))
+                {
+                    enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
+                }
             }
 
             //Is using Slam
@@ -373,7 +404,14 @@ public class PlayerController : MonoBehaviour
                 {
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * slamKnockback);
                 }
-                enemy.GetComponent<EnemyController>().TakeDamage(slamDamage);
+                if (enemy.name.Contains("Melee"))
+                {
+                    enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                }
+                else if (enemy.name.Contains("Ranged"))
+                {
+                    enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
+                }
             }
         }
     }
@@ -384,12 +422,9 @@ public class PlayerController : MonoBehaviour
         {
             currentHealth -= damage;
 
-            //hurt
+            theManager.UpdateHeartMeter();
 
-            if (currentHealth <= 0)
-            {
-                Die();
-            }
+            //hurt
         }
         knockedBack = true;
         canMove = false;
