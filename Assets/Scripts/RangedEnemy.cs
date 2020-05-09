@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
-
     PlayerController player;
     Rigidbody2D rb;
     Animator anim;
@@ -63,12 +62,20 @@ public class RangedEnemy : MonoBehaviour
                     anim.SetTrigger("Attack");
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
-            }
-            else if (playerInSight && !stunned)
-            {
+                else if (playerInSight && !stunned)
+                {
                     rb.velocity = Vector2.zero;
-            }
+                }
 
+                if (player.transform.position.x > transform.position.x)
+                {
+                    transform.localScale = new Vector3(2, 2, transform.localScale.z);
+                }
+                else if (player.transform.position.x < transform.position.x)
+                {
+                    transform.localScale = new Vector3(-2, 2, transform.localScale.z);
+                }
+            }
         }
         else
         {

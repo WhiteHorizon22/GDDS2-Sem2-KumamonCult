@@ -7,14 +7,12 @@ public class Shoot : StateMachineBehaviour
 
     PlayerController player;
     RangedEnemy rangedEnemy;
-    Rigidbody2D rb;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = FindObjectOfType<PlayerController>();
         rangedEnemy = animator.GetComponent<RangedEnemy>();
-        rb = animator.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,7 +26,7 @@ public class Shoot : StateMachineBehaviour
     {
         if (rangedEnemy.playerInSight)
         {
-            Instantiate(rangedEnemy.ammo, rb.transform);
+            Instantiate(rangedEnemy.ammo, animator.transform);
         }
     }
 

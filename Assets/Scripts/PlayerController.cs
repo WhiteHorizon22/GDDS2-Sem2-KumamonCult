@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     //References
     Rigidbody2D rb;
-    LevelManager levelManager;
     Animator anim;
 
     [Header("Health")]
@@ -18,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpHeight;
     public bool doubleJumpUsed;
+    public bool canMove;
 
     [Header("Ground Check")]
     public Transform groundcheck;
@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        levelManager = FindObjectOfType<LevelManager>();
         anim = GetComponent<Animator>();
         currentSlashDuration = reaperSlashDuration;
         currentDashDuration = dashDuration;
@@ -90,6 +89,7 @@ public class PlayerController : MonoBehaviour
         dashing = false;
         usingGroundPound = false;
         knockedBack = false;
+        canMove = true;
     }
 
     // Update is called once per frame
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("IsGrounded", false);
         }
 
-        if (!dashing && !usingGroundPound && !knockedBack)
+        if (!dashing && !usingGroundPound && !knockedBack && canMove)
         {
             //Manual Movement
             float h = Input.GetAxisRaw("Horizontal");
@@ -294,6 +294,7 @@ public class PlayerController : MonoBehaviour
         {
             if (knockbackDuration >= 0)
             {
+                canMove = false;
                 anim.SetTrigger("Hurt");
                 reaperSlashActivated = false;
                 Time.timeScale = 1f;
@@ -313,6 +314,7 @@ public class PlayerController : MonoBehaviour
             else if (knockbackDuration <= 0)
             {
                 knockedBack = false;
+                canMove = true;
                 knockbackDuration = originKnockbackDuration;
             }
         }
@@ -385,6 +387,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         knockedBack = true;
+        canMove = false;
     }
 
     void Die()
