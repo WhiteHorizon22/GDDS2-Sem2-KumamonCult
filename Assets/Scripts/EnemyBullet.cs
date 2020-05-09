@@ -6,7 +6,7 @@ public class EnemyBullet : MonoBehaviour
 {
     Vector2 moveDirection;
     Rigidbody2D rb; // Reference to Rigid 2D component in Bullet prefab
-    private LevelManager theLevelManager; // Make reference to LevelManager
+
     public int damageToGive;
     PlayerController player;
     public float bulletForce;
@@ -16,7 +16,7 @@ public class EnemyBullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        theLevelManager = FindObjectOfType<LevelManager>();
+
 
         player = FindObjectOfType<PlayerController>();
 
@@ -32,23 +32,8 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            theLevelManager.HurtPlayer(damageToGive);
-            print(theLevelManager.healthCount);
-        }
-        else if (other.tag == "PlayerAttackRange" && player.basicAttackTrigger == true)
-        {
-            rb.velocity = new Vector2(-moveDirection.x, -moveDirection.y);
-        }
-        else if (other.tag == "Wall" || other.tag == "Ground")
-        {
-            Destroy(gameObject);
+            player.TakeDamage(damageToGive);
         }
     }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.tag == "PlayerAttackRange" && player.basicAttackTrigger == true)
-        {
-            rb.velocity = new Vector2(-moveDirection.x, -moveDirection.y);
-        }
-    }
+
 }
