@@ -311,8 +311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa220435682dcc409b3438b56df80d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
+  maxHealth: 3
+  currentHealth: 3
   groundcheck: {fileID: 1054692550}
   groundcheckRadius: 0.3
   ground:
@@ -372,7 +372,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &249489502
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -455,13 +455,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249489498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.39, y: -1.07, z: 0}
+  m_LocalPosition: {x: 30.4, y: -1.07, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1054692550}
   - {fileID: 1367736350}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &278080723 stripped
 Transform:
@@ -1335,17 +1335,17 @@ PrefabInstance:
     - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
       propertyPath: knockbackDuration
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
       propertyPath: knockbackStrength
-      value: 200
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
       propertyPath: originKnockbackDuration
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
@@ -1929,58 +1929,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1633776186
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1633776188}
-  - component: {fileID: 1633776187}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1633776187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633776186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929fdad28cc83fc44a98d88d45f58f62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 6
-  numOfHearts: 3
-  hearts:
-  - {fileID: 2119721226}
-  - {fileID: 1277358838}
-  - {fileID: 1975727610}
-  fullHeart: {fileID: 21300714, guid: 995eccfa3d760874ca27e422592380dd, type: 3}
-  halfHeart: {fileID: 21300716, guid: 995eccfa3d760874ca27e422592380dd, type: 3}
-  emptyHeart: {fileID: 21300718, guid: 995eccfa3d760874ca27e422592380dd, type: 3}
---- !u!4 &1633776188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633776186}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 484.32892, y: 221.47464, z: 10.181635}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1655347055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2627,6 +2575,16 @@ PrefabInstance:
     - target: {fileID: 4989284579186292399, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989284579186292399, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
+        type: 3}
+      propertyPath: currentHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989284579186292399, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
+        type: 3}
+      propertyPath: maxHealth
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
