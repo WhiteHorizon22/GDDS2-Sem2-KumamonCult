@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //References
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     Animator anim;
+    public Vector3 respawnPosition; // Store a respawn position the player will go to whenever she dies
+    LevelManager theManager; // Make reference to LevelManager
 
     [Header("Health")]
     public int maxHealth;
@@ -82,6 +84,9 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        respawnPosition = transform.position; // Wheb game starts, respawn position is equal to player's current position
+        theManager = FindObjectOfType<LevelManager>();
+
         currentSlashDuration = reaperSlashDuration;
         currentDashDuration = dashDuration;
         doubleJumpUsed = false;
@@ -393,6 +398,14 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Checkpoint")
+        {
+            respawnPosition = other.transform.position; // Set player respawn position to entered Checkpoint's position
+        }
     }
 
     private void OnDrawGizmosSelected()
