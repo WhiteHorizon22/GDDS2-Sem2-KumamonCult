@@ -7,10 +7,12 @@ public class EnemyController : MonoBehaviour
     PlayerController player;
     Rigidbody2D rb;
     Animator anim;
+    SpriteRenderer sr;
 
+    [Header("Health")]
     public int maxHealth;
     public int currentHealth;
-    SpriteRenderer sr;
+    public GameObject healthBar;
 
     [Header("Ground Check")]
     public Transform groundcheck;
@@ -50,6 +52,7 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         stunned = false;
+        UpdateHealthBar();
     }
 
     // Update is called once per frame
@@ -115,6 +118,7 @@ public class EnemyController : MonoBehaviour
         stunned = true;
 
         currentHealth -= damage;
+        UpdateHealthBar();
         Destroy(Instantiate(attackEffect, rb.transform), 2);
 
         //Play hurt animation
@@ -133,6 +137,11 @@ public class EnemyController : MonoBehaviour
 
         //Disable the Enemy
 
+    }
+
+    void UpdateHealthBar()
+    {
+        healthBar.transform.localScale = new Vector3(currentHealth / 10f, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
     }
 
     private void OnDrawGizmosSelected()
