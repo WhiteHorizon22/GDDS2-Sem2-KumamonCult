@@ -40,6 +40,7 @@ public class EnemyController : MonoBehaviour
     public bool stunned;
     public float stunTime;
     public float speed;
+    public GameObject deathEffect;
 
     public GameObject attackEffect;
 
@@ -150,7 +151,8 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        Instantiate(deathEffect, transform);
+        gameObject.SetActive(false);
         //Die animation
 
         //Disable the Enemy

@@ -34,6 +34,7 @@ public class RangedEnemy : MonoBehaviour
     public bool stunned;
     public float stunTime;
     public float speed;
+    public GameObject deathEffect;
 
     public GameObject attackEffect;
     public GameObject ammo;
@@ -103,6 +104,7 @@ public class RangedEnemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            Instantiate(deathEffect, transform);
             Die();
         }
     }

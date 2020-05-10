@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
     public bool dashTargetSelected;
     public float reaperSlashDuration;
     private float currentSlashDuration;
+    public bool slashing;
 
     // Start is called before the first frame update
     void Start()
@@ -216,7 +217,7 @@ public class PlayerController : MonoBehaviour
 
                 if (currentSlashDuration > 0)
                 {
-                    Attack();
+                    slashing = true;
                     rb.MovePosition(reaperSlashTarget);
                     if (reaperSlashTarget.x > transform.position.x)
                     {
@@ -231,6 +232,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if (currentSlashDuration <= 0)
                     {
+                        slashing = false;
                         dashTargetSelected = false;
                         reaperSlashActivated = false;
                         rb.velocity = Vector2.zero;
@@ -389,11 +391,35 @@ public class PlayerController : MonoBehaviour
 
                 if (enemy.name.Contains("Melee"))
                 {
-                    enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                    enemy.GetComponent<EnemyController>().TakeDamage(uppercutDamage);
                 }
                 else if (enemy.name.Contains("Ranged"))
                 {
-                    enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
+                    enemy.GetComponent<RangedEnemy>().TakeDamage(uppercutDamage);
+                }
+            }
+
+            if (slashing)
+            {
+                if (enemy.name.Contains("Melee"))
+                {
+                    enemy.GetComponent<EnemyController>().TakeDamage(reaperSlashDamage);
+                }
+                else if (enemy.name.Contains("Ranged"))
+                {
+                    enemy.GetComponent<RangedEnemy>().TakeDamage(reaperSlashDamage);
+                }
+            }
+
+            if (dashing)
+            {
+                if (enemy.name.Contains("Melee"))
+                {
+                    enemy.GetComponent<EnemyController>().TakeDamage(dashDamage);
+                }
+                else if (enemy.name.Contains("Ranged"))
+                {
+                    enemy.GetComponent<RangedEnemy>().TakeDamage(dashDamage);
                 }
             }
 
@@ -410,11 +436,11 @@ public class PlayerController : MonoBehaviour
                 }
                 if (enemy.name.Contains("Melee"))
                 {
-                    enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                    enemy.GetComponent<EnemyController>().TakeDamage(slamDamage);
                 }
                 else if (enemy.name.Contains("Ranged"))
                 {
-                    enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
+                    enemy.GetComponent<RangedEnemy>().TakeDamage(slamDamage);
                 }
             }
         }

@@ -114,9 +114,9 @@ public class LevelManager : MonoBehaviour
     public void AddCoins(int coinsToAdd)
     {
         //coinCount = coinCount + coinsToAdd;
-        coinCount += coinsToAdd; //Short form
+        //coinCount += coinsToAdd; //Short form
 
-        coinText.text = "Coins: " + coinCount;
+        //coinText.text = "Coins: " + coinCount;
 
     }
 
@@ -126,7 +126,7 @@ public class LevelManager : MonoBehaviour
 
         livesText.text = "Lives: " + lifeCount;
 
-        coinSound.Play();
+        //coinSound.Play();
     }
 
     public void TakeLives(int livesToTake)
@@ -135,7 +135,7 @@ public class LevelManager : MonoBehaviour
 
         livesText.text = "Lives: " + lifeCount;
 
-        coinSound.Play();
+        //coinSound.Play();
     }
 
     //public IEnumerator SetUpPlayer()

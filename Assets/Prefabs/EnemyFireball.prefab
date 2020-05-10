@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1096994515819539404}
   - component: {fileID: 1096994515819539405}
-  - component: {fileID: 1096994515819539402}
   - component: {fileID: 1096994515819539403}
   - component: {fileID: 1096994515819539400}
   - component: {fileID: 1096994515819539401}
   - component: {fileID: 1096994515819539407}
+  - component: {fileID: 2234801213882084793}
   m_Layer: 0
   m_Name: EnemyFireball
   m_TagString: Hazard
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096994515819539398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.22, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,23 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToGive: 1
-  bulletForce: 10
---- !u!58 &1096994515819539402
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1096994515819539398}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  bulletForce: 5
 --- !u!198 &1096994515819539403
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4857,3 +4841,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &2234801213882084793
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096994515819539398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.38162947}
+  serializedVersion: 2
+  m_Radius: 0.53309965

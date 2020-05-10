@@ -187,7 +187,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa220435682dcc409b3438b56df80d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  currentHealth: 5
+  maxHealth: 3
+  currentHealth: 3
   healthBar: {fileID: 7574822235122886099}
   groundcheck: {fileID: 516582159961625926}
   groundcheckRadius: 0.3
@@ -235,7 +235,7 @@ MonoBehaviour:
   isGrounded: 0
   sight: {fileID: 516582159235563934}
   sightDistance: 20
-  attackRate: 0.1
+  attackRate: 0.3
   playerInSight: 0
   playerLayer:
     serializedVersion: 2
@@ -245,6 +245,8 @@ MonoBehaviour:
   stunned: 0
   stunTime: 2
   speed: 0
+  deathEffect: {fileID: 104949974089830332, guid: 02835680d7dceed41aeb94b9a53539f9,
+    type: 3}
   attackEffect: {fileID: 1651134098349768456, guid: 29db25d061efae04dae7932544a65cbd,
     type: 3}
   ammo: {fileID: 1096994515819539398, guid: fa280555378cfd246b70028b7cec542d, type: 3}
