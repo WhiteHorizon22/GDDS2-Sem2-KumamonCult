@@ -51,9 +51,9 @@ public class LevelManager : MonoBehaviour
 
         thePlayer.currentHealth = thePlayer.maxHealth;
 
-        StartCoroutine("SetUpPlayer");
+        //StartCoroutine("SetUpPlayer");
 
-        coinText.text = "Coins: " + coinCount;
+        //coinText.text = "Coins: " + coinCount;
 
         livesText.text = "Lives: " + lifeCount;
     }
@@ -138,21 +138,21 @@ public class LevelManager : MonoBehaviour
         coinSound.Play();
     }
 
-    public IEnumerator SetUpPlayer()
-    {
-        print("setting up");
+    //public IEnumerator SetUpPlayer()
+    //{
+    //    print("setting up");
 
-        yield return new WaitForSeconds(0.2f);
+    //    yield return new WaitForSeconds(0.2f);
 
-        coinCount = PlayerPrefs.GetInt("coinsTransfered");
-        coinText.text = "Coins: " + coinCount;
+    //    coinCount = PlayerPrefs.GetInt("coinsTransfered");
+    //    //coinText.text = "Coins: " + coinCount;
 
-        if (PlayerPrefs.GetInt("livesLeft") >= 0)
-        {
-            lifeCount = PlayerPrefs.GetInt("livesLeft");
-            livesText.text = "Lives: " + lifeCount;
-        }
-    }
+    //    if (PlayerPrefs.GetInt("livesLeft") >= 0)
+    //    {
+    //        lifeCount = PlayerPrefs.GetInt("livesLeft");
+    //        livesText.text = "Lives: " + lifeCount;
+    //    }
+    //}
 
     public void UpdateHeartMeter()
     {

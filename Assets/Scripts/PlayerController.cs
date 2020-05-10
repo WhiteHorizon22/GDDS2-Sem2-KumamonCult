@@ -155,14 +155,14 @@ public class PlayerController : MonoBehaviour
             //Attacking
             if (Time.time >= nextAttackTime & !reaperSlashActivated)
             {
-                if (Input.GetKey(KeyCode.Mouse0))
+                if (Input.GetKey(KeyCode.J))
                 {
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
 
                 //Uppercut
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.I))
                 {
                     rb.AddForce(Vector2.up * uppercutAirBoost);
                     Attack();
@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
                 }
 
                 //Groundpound and Slam
-                if (Input.GetKeyDown(KeyCode.S))
+                if (Input.GetKeyDown(KeyCode.K))
                 {
                     if (isGrounded)
                     {
@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Reaper Slash Setup
-            if (Input.GetKeyDown(KeyCode.Mouse1) && !reaperSlashActivated)
+            if (Input.GetKeyDown(KeyCode.N) && !reaperSlashActivated)
             {
                 reaperSlashActivated = true;
 
@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
                 reaperSlashArea.transform.localScale = new Vector3(reaperSlashRadius, reaperSlashRadius, transform.localScale.z);
 
             }
-            else if (Input.GetKeyDown(KeyCode.Mouse1) && reaperSlashActivated) //This is for Debugging only
+            else if (Input.GetKeyDown(KeyCode.N) && reaperSlashActivated) //This is for Debugging only
             {
                 reaperSlashActivated = false;
 
@@ -239,7 +239,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             //Dash
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 currentDashDuration = dashDuration;
                 dashing = true;
@@ -270,7 +270,7 @@ public class PlayerController : MonoBehaviour
             //Detect Enemies in range of attack
             Collider2D[] poundedEnemies = Physics2D.OverlapCircleAll(groundPoundCheck.position, 2f, attackable);
 
-            if (Input.GetKeyUp(KeyCode.S))
+            if (Input.GetKeyUp(KeyCode.K))
             {
                 //Apply Damage to Detected Enemies
                 foreach (Collider2D enemy in poundedEnemies)
@@ -356,7 +356,7 @@ public class PlayerController : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             //If Using basic Attack
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.J))
             {
                 if (this.isGrounded == false)
                 {
@@ -383,10 +383,10 @@ public class PlayerController : MonoBehaviour
             }
 
             //If using Uppercut
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.I))
             {
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
-                enemy.GetComponent<EnemyController>().TakeDamage(uppercutDamage);
+
                 if (enemy.name.Contains("Melee"))
                 {
                     enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
@@ -398,7 +398,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Is using Slam
-            if (Input.GetKeyDown(KeyCode.S) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.K) && isGrounded)
             {
                 if (enemy.transform.position.x > this.transform.position.x)
                 {

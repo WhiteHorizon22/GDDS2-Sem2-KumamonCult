@@ -19,6 +19,8 @@ public class EnemyController : MonoBehaviour
     public float groundcheckRadius;
     public LayerMask ground;
     public bool isGrounded;
+    public Transform leftPoint;
+    public Transform rightPoint;
 
     [Header("Attack Range")]
     public int damage;
@@ -35,8 +37,8 @@ public class EnemyController : MonoBehaviour
     public bool playerInSight;
 
     [Header("Behaviour")]
-    public bool chasing;
-    public bool patrolling;
+    public bool canMoveLeft;
+    public bool canMoveRight;
     public bool stunned;
     public float stunTime;
     public float speed;
@@ -60,6 +62,10 @@ public class EnemyController : MonoBehaviour
     {
         //Ground Dectection
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, ground);
+        //Anti-Lemming Detectiom
+        canMoveLeft = Physics2D.OverlapCircle(leftPoint.position, groundcheckRadius, ground);
+        canMoveRight = Physics2D.OverlapCircle(rightPoint.position, groundcheckRadius, ground);
+
         //Player Detection
         playerInRange = Physics2D.OverlapCircle(attackRange.position, attackRangeRadius, playerLayer);
         //Sight
@@ -76,23 +82,30 @@ public class EnemyController : MonoBehaviour
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
             }
-            else if (playerInSight && !stunned)
+            else if (playerInSight && !playerInRange)
             {
-                if (player.transform.position.x > attackRange.transform.position.x)
+                if (isGrounded)
                 {
-                    transform.localScale = new Vector3(2, 2, transform.localScale.z);
-                    anim.SetBool("chase", true);
-                    rb.velocity = new Vector2(speed, rb.velocity.y);
-                }
-                else if (player.transform.position.x < attackRange.transform.position.x)
-                {
-                    transform.localScale = new Vector3(-2, 2, transform.localScale.z);
-                    anim.SetBool("chase", true);
-                    rb.velocity = new Vector2(-speed, rb.velocity.y);
-                }
-                else
-                {
-                    anim.SetBool("chase", false);
+                    if (player.transform.position.x > attackRange.transform.position.x && canMoveRight)
+                    {
+                        transform.localScale = new Vector3(2, 2, transform.localScale.z);
+                        anim.SetBool("chase", true);
+                        rb.velocity = new Vector2(speed, rb.velocity.y);
+                    }
+                    else if (player.transform.position.x < attackRange.transform.position.x && canMoveLeft)
+                    {
+                        transform.localScale = new Vector3(-2, 2, transform.localScale.z);
+                        anim.SetBool("chase", true);
+                        rb.velocity = new Vector2(-speed, rb.velocity.y);
+                    }
+                    else
+                    {
+                        if (!stunned && !canMoveLeft)
+                        {
+                            rb.velocity = Vector2.zero;
+                            anim.SetBool("chase", false);
+                        }
+                    }
                 }
             }
             
@@ -149,5 +162,6 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(attackRange.position, attackRangeRadius);
         Gizmos.DrawWireSphere(groundcheck.position, groundcheckRadius);
         Gizmos.DrawWireSphere(sight.position, sightDistance);
+        Gizmos.DrawWireSphere(leftPoint.position, groundcheckRadius);
     }
 }
