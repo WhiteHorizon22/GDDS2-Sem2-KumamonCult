@@ -270,32 +270,36 @@ public class PlayerController : MonoBehaviour
             //Detect Enemies in range of attack
             Collider2D[] poundedEnemies = Physics2D.OverlapCircleAll(groundPoundCheck.position, 2f, attackable);
 
-            //Apply Damage to Detected Enemies
-            foreach (Collider2D enemy in poundedEnemies)
+            if (Input.GetKeyUp(KeyCode.S))
             {
-                enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
+                //Apply Damage to Detected Enemies
+                foreach (Collider2D enemy in poundedEnemies)
+                {
 
-                if (enemy.transform.position.x > this.transform.position.x)
-                {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback/2);
-                }
-                else if (enemy.transform.position.x < this.transform.position.x)
-                {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback/2);
-                }
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
 
-                if (enemy.name.Contains("Melee"))
-                {
-                    if (enemy.GetComponent<EnemyController>().isGrounded)
+                    if (enemy.transform.position.x > this.transform.position.x)
                     {
-                        enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback / 2);
                     }
-                }
-                else if (enemy.name.Contains("Ranged"))
-                {
-                    if (enemy.GetComponent<RangedEnemy>().isGrounded)
+                    else if (enemy.transform.position.x < this.transform.position.x)
                     {
-                        enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
+                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback / 2);
+                    }
+
+                    if (enemy.name.Contains("Melee"))
+                    {
+                        if (enemy.GetComponent<EnemyController>().isGrounded)
+                        {
+                            enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                        }
+                    }
+                    else if (enemy.name.Contains("Ranged"))
+                    {
+                        if (enemy.GetComponent<RangedEnemy>().isGrounded)
+                        {
+                            enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
+                        }
                     }
                 }
             }

@@ -235,7 +235,7 @@ MonoBehaviour:
   isGrounded: 0
   sight: {fileID: 516582159235563934}
   sightDistance: 20
-  attackRate: 0.5
+  attackRate: 0.1
   playerInSight: 0
   playerLayer:
     serializedVersion: 2
