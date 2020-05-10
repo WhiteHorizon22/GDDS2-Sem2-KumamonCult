@@ -19,8 +19,7 @@ public class EnemyController : MonoBehaviour
     public float groundcheckRadius;
     public LayerMask ground;
     public bool isGrounded;
-    public Transform leftPoint;
-    public Transform rightPoint;
+    public Transform front;
 
     [Header("Attack Range")]
     public int damage;
@@ -37,8 +36,7 @@ public class EnemyController : MonoBehaviour
     public bool playerInSight;
 
     [Header("Behaviour")]
-    public bool canMoveLeft;
-    public bool canMoveRight;
+    public bool canMoveAhead;
     public bool stunned;
     public float stunTime;
     public float speed;
@@ -63,8 +61,7 @@ public class EnemyController : MonoBehaviour
         //Ground Dectection
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, ground);
         //Anti-Lemming Detectiom
-        canMoveLeft = Physics2D.OverlapCircle(leftPoint.position, groundcheckRadius, ground);
-        canMoveRight = Physics2D.OverlapCircle(rightPoint.position, groundcheckRadius, ground);
+        canMoveAhead = Physics2D.OverlapCircle(front.position, groundcheckRadius, ground);
 
         //Player Detection
         playerInRange = Physics2D.OverlapCircle(attackRange.position, attackRangeRadius, playerLayer);
@@ -86,24 +83,32 @@ public class EnemyController : MonoBehaviour
             {
                 if (isGrounded)
                 {
-                    if (player.transform.position.x > attackRange.transform.position.x && canMoveRight)
+                    if (!stunned && !canMoveAhead)
                     {
-                        transform.localScale = new Vector3(2, 2, transform.localScale.z);
-                        anim.SetBool("chase", true);
-                        rb.velocity = new Vector2(speed, rb.velocity.y);
-                    }
-                    else if (player.transform.position.x < attackRange.transform.position.x && canMoveLeft)
-                    {
-                        transform.localScale = new Vector3(-2, 2, transform.localScale.z);
-                        anim.SetBool("chase", true);
-                        rb.velocity = new Vector2(-speed, rb.velocity.y);
+                        rb.velocity = Vector2.zero;
+                        anim.SetBool("chase", false);
+                        if (!canMoveAhead & (player.transform.position.x > front.transform.position.x))
+                        {
+                            transform.localScale = new Vector3(2, 2, transform.localScale.z);
+                        }
+                        else if (player.transform.position.x < front.transform.position.x)
+                        {
+                            transform.localScale = new Vector3(-2, 2, transform.localScale.z);
+                        }
                     }
                     else
                     {
-                        if (!stunned && !canMoveLeft)
+                        if (player.transform.position.x > front.transform.position.x)
                         {
-                            rb.velocity = Vector2.zero;
-                            anim.SetBool("chase", false);
+                            transform.localScale = new Vector3(2, 2, transform.localScale.z);
+                            anim.SetBool("chase", true);
+                            rb.velocity = new Vector2(speed, rb.velocity.y);
+                        }
+                        else if (player.transform.position.x < front.transform.position.x)
+                        {
+                            transform.localScale = new Vector3(-2, 2, transform.localScale.z);
+                            anim.SetBool("chase", true);
+                            rb.velocity = new Vector2(-speed, rb.velocity.y);
                         }
                     }
                 }
@@ -162,6 +167,6 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(attackRange.position, attackRangeRadius);
         Gizmos.DrawWireSphere(groundcheck.position, groundcheckRadius);
         Gizmos.DrawWireSphere(sight.position, sightDistance);
-        Gizmos.DrawWireSphere(leftPoint.position, groundcheckRadius);
+        Gizmos.DrawWireSphere(front.position, groundcheckRadius);
     }
 }
