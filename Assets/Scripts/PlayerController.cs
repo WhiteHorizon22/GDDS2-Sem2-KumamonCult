@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     public Vector3 respawnPosition; // Store a respawn position the player will go to whenever she dies
     LevelManager theManager; // Make reference to LevelManager
+    public Vector3 originalSpawn;
 
     [Header("Health")]
     public int maxHealth;
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour
         usingGroundPound = false;
         knockedBack = false;
         canMove = true;
+        originalSpawn = transform.position;
         groundPoundCheck.gameObject.SetActive(false);
     }
 

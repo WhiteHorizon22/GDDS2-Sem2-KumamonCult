@@ -11,6 +11,7 @@ public class CheckpointController : MonoBehaviour
     private SpriteRenderer theSpriteRenderer;
 
     public bool checkpointActive;
+    public bool checkpointInUse;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class CheckpointController : MonoBehaviour
     // Check for when the Player enters the checkpoint
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && checkpointInUse)
         {
             // Set sprite in the SpriteRenderer to flagOpen sprite
             theSpriteRenderer.sprite = flagOpen;

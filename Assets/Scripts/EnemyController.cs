@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer sr;
+    LevelManager theManager;
 
     [Header("Health")]
     public int maxHealth;
@@ -53,6 +54,7 @@ public class EnemyController : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
         rageMeter = FindObjectOfType<StaminaBar>();
+        theManager = FindObjectOfType<LevelManager>();
 
         stunned = false;
         UpdateHealthBar();
@@ -140,6 +142,8 @@ public class EnemyController : MonoBehaviour
 
         rageMeter.mana.IncreaseMana(1);
 
+        theManager.AddPoints(10);
+
         currentHealth -= damage;
         UpdateHealthBar();
         Destroy(Instantiate(attackEffect, rb.transform), 2);
@@ -159,7 +163,7 @@ public class EnemyController : MonoBehaviour
         rageMeter.mana.IncreaseMana(2);
         Destroy(gameObject);
         //Die animation
-
+        theManager.AddPoints(100);
         //Disable the Enemy
 
     }

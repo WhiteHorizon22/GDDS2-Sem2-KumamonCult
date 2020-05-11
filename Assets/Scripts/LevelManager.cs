@@ -10,8 +10,8 @@ public class LevelManager : MonoBehaviour
     public PlayerController thePlayer; // Makes reference to an object of PlayerController
     public GameObject deathSplosion;
 
-    public int coinCount; // Keep track of number of coins that the player collected
-    public Text coinText;
+    public int pointsCount; // Keep track of number of coins that the player collected
+    public Text pointsText;
 
     public Text livesText;
     public int lifeCount;
@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
 
         //StartCoroutine("SetUpPlayer");
 
-        //coinText.text = "Coins: " + coinCount;
+        pointsText.text = "Pts: " + pointsCount;
 
         livesText.text = "Lives: " + lifeCount;
     }
@@ -111,13 +111,19 @@ public class LevelManager : MonoBehaviour
         thePlayer.gameObject.SetActive(true); // Reactivate Player in the world
     }
 
-    public void AddCoins(int coinsToAdd)
+    public void AddPoints(int pointsToAdd)
     {
-        //coinCount = coinCount + coinsToAdd;
-        //coinCount += coinsToAdd; //Short form
+        pointsCount += pointsToAdd; //Short form
 
-        //coinText.text = "Coins: " + coinCount;
+        pointsText.text = "Pts: " + pointsCount;
 
+    }
+
+    public void LosePoints(int pointsToLose)
+    {
+        pointsCount -= pointsToLose; //Short form
+
+        pointsText.text = "Pts: " + pointsCount;
     }
 
     public void AddLives(int livesToGive)
