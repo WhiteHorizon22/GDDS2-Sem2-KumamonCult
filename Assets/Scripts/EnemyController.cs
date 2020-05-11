@@ -43,6 +43,7 @@ public class EnemyController : MonoBehaviour
     public GameObject deathEffect;
 
     public GameObject attackEffect;
+    public StaminaBar rageMeter;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,7 @@ public class EnemyController : MonoBehaviour
         currentHealth = maxHealth;
         player = FindObjectOfType<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
+        rageMeter = FindObjectOfType<StaminaBar>();
 
         stunned = false;
         UpdateHealthBar();
@@ -136,6 +138,8 @@ public class EnemyController : MonoBehaviour
     {
         stunned = true;
 
+        rageMeter.mana.IncreaseMana(1);
+
         currentHealth -= damage;
         UpdateHealthBar();
         Destroy(Instantiate(attackEffect, rb.transform), 2);
@@ -145,14 +149,15 @@ public class EnemyController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            Instantiate(deathEffect, transform);
             Die();
         }
     }
 
     void Die()
     {
-        Instantiate(deathEffect, transform);
-        gameObject.SetActive(false);
+        rageMeter.mana.IncreaseMana(2);
+        Destroy(gameObject);
         //Die animation
 
         //Disable the Enemy

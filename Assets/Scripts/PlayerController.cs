@@ -80,6 +80,8 @@ public class PlayerController : MonoBehaviour
     private float currentSlashDuration;
     public bool slashing;
 
+    public StaminaBar rageMeter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,6 +89,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         respawnPosition = transform.position; // Wheb game starts, respawn position is equal to player's current position
         theManager = FindObjectOfType<LevelManager>();
+        rageMeter = FindObjectOfType<StaminaBar>();
 
         currentSlashDuration = reaperSlashDuration;
         currentDashDuration = dashDuration;
@@ -103,6 +106,8 @@ public class PlayerController : MonoBehaviour
     {
         //Ground Dectection
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, ground);
+
+        UpdatePlayerStats();
 
         if (isGrounded)
         {
@@ -183,60 +188,6 @@ public class PlayerController : MonoBehaviour
                         Attack();
                         usingGroundPound = true;
                         nextAttackTime = Time.time + 1f / attackRate;
-                    }
-                }
-            }
-
-            //Reaper Slash Setup
-            if (Input.GetKeyDown(KeyCode.N) && !reaperSlashActivated)
-            {
-                reaperSlashActivated = true;
-
-                //Slow Down Time
-                Time.timeScale = slowDownFactor;
-
-                //Create Area for Player to choose ReaperSlashTarget
-                reaperSlashArea.SetActive(true);
-                reaperSlashArea.transform.localScale = new Vector3(reaperSlashRadius, reaperSlashRadius, transform.localScale.z);
-
-            }
-            else if (Input.GetKeyDown(KeyCode.N) && reaperSlashActivated) //This is for Debugging only
-            {
-                reaperSlashActivated = false;
-
-                //Reset Time to normal
-                Time.timeScale = 1f;
-
-                //Reset ReaperSlash
-                reaperSlashArea.SetActive(false);
-            }
-            //Execute Reaper Slash
-            if (reaperSlashActivated && dashTargetSelected)
-            {
-                currentSlashDuration -= Time.deltaTime;
-
-                if (currentSlashDuration > 0)
-                {
-                    slashing = true;
-                    rb.MovePosition(reaperSlashTarget);
-                    if (reaperSlashTarget.x > transform.position.x)
-                    {
-                        transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
-                    }
-                    else if (reaperSlashTarget.x < transform.position.x)
-                    {
-                        transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
-                    }
-                }
-                else
-                {
-                    if (currentSlashDuration <= 0)
-                    {
-                        slashing = false;
-                        dashTargetSelected = false;
-                        reaperSlashActivated = false;
-                        rb.velocity = Vector2.zero;
-                        currentSlashDuration = reaperSlashDuration;
                     }
                 }
             }
@@ -470,6 +421,50 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Checkpoint")
         {
             respawnPosition = other.transform.position; // Set player respawn position to entered Checkpoint's position
+        }
+    }
+
+    public void UpdatePlayerStats()
+    {
+        if (rageMeter.mana.manaAmount > 20 && rageMeter.mana.manaAmount < 40)
+        {
+            standardAttackDamage = 2;
+            dashDamage = 2;
+            slamDamage = 2;
+            uppercutDamage = 2;
+            reaperSlashDamage = 2;
+        }
+        else if (rageMeter.mana.manaAmount > 40 && rageMeter.mana.manaAmount < 60)
+        {
+            standardAttackDamage = 3;
+            dashDamage = 3;
+            slamDamage = 3;
+            uppercutDamage = 3;
+            reaperSlashDamage = 3;
+        }
+        else if (rageMeter.mana.manaAmount > 60 && rageMeter.mana.manaAmount < 80)
+        {
+            standardAttackDamage = 4;
+            dashDamage = 4;
+            slamDamage = 4;
+            uppercutDamage = 4;
+            reaperSlashDamage = 4;
+        }
+        else if (rageMeter.mana.manaAmount > 80)
+        {
+            standardAttackDamage = 5;
+            dashDamage = 5;
+            slamDamage = 5;
+            uppercutDamage = 5;
+            reaperSlashDamage = 5;
+        }
+        else if (rageMeter.mana.manaAmount < 20)
+        {
+            standardAttackDamage = 1;
+            dashDamage = 1;
+            slamDamage = 1;
+            uppercutDamage = 1;
+            reaperSlashDamage = 1;
         }
     }
 

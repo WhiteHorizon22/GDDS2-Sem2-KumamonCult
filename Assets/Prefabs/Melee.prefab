@@ -268,8 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d486fdd6521e241b8824aa6c1c7a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 3
+  maxHealth: 10
+  currentHealth: 10
   healthBar: {fileID: 7640249657591166004}
   groundcheck: {fileID: 4989284577874666926}
   groundcheckRadius: 0.5
