@@ -169,6 +169,14 @@ public class EnemyController : MonoBehaviour
         healthBar.transform.localScale = new Vector3(currentHealth / 10f, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if ((other.tag == "Player") && player.usingGroundPound)
+        {
+            TakeDamage(player.slamDamage);
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(attackRange.position, attackRangeRadius);

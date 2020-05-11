@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
     public int uppercutDamage;
     public int dashDamage;
     public int slamDamage;
-    public int reaperSlashDamage;
 
     [Header("Uppercut")]
     public float uppercutAirBoost;
@@ -59,6 +58,7 @@ public class PlayerController : MonoBehaviour
     public float slamKnockback;
     public bool usingGroundPound;
     public Transform groundPoundCheck;
+    public bool onEnemy;
 
     [Header("Dash")]
     public float dashSpeed;
@@ -66,19 +66,9 @@ public class PlayerController : MonoBehaviour
     public float dashDuration;
     public bool dashing;
 
-    [Header("Reaper Slash Variables")]
-    //Set Up
-    public bool reaperSlashActivated;
-    public float slowDownFactor;
-    //Area of Effect
-    public GameObject reaperSlashArea;
-    public float reaperSlashRadius;
-    public Vector2  reaperSlashTarget;
-    //Dash Execution
-    public bool dashTargetSelected;
-    public float reaperSlashDuration;
-    private float currentSlashDuration;
-    public bool slashing;
+    [Header("Colliders")]
+    public GameObject normalBodyCollision;
+
 
     public StaminaBar rageMeter;
 
@@ -91,14 +81,13 @@ public class PlayerController : MonoBehaviour
         theManager = FindObjectOfType<LevelManager>();
         rageMeter = FindObjectOfType<StaminaBar>();
 
-        currentSlashDuration = reaperSlashDuration;
         currentDashDuration = dashDuration;
         doubleJumpUsed = false;
-        reaperSlashActivated = false;
         dashing = false;
         usingGroundPound = false;
         knockedBack = false;
         canMove = true;
+        groundPoundCheck.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -106,6 +95,8 @@ public class PlayerController : MonoBehaviour
     {
         //Ground Dectection
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, ground);
+        //If on Enemy
+        onEnemy = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, attackable);
 
         UpdatePlayerStats();
 
@@ -143,7 +134,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Jumping
-            if (Input.GetButtonDown("Jump") && isGrounded)
+            if (Input.GetButtonDown("Jump") && (isGrounded || onEnemy))
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
             }
@@ -159,7 +150,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Attacking
-            if (Time.time >= nextAttackTime & !reaperSlashActivated)
+            if (Time.time >= nextAttackTime)
             {
                 if (Input.GetKey(KeyCode.J))
                 {
@@ -220,50 +211,20 @@ public class PlayerController : MonoBehaviour
         }
         else if (usingGroundPound & !knockedBack)
         {
-            //Detect Enemies in range of attack
-            Collider2D[] poundedEnemies = Physics2D.OverlapCircleAll(groundPoundCheck.position, 2f, attackable);
-
-            if (Input.GetKeyUp(KeyCode.K))
-            {
-                //Apply Damage to Detected Enemies
-                foreach (Collider2D enemy in poundedEnemies)
-                {
-
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
-
-                    if (enemy.transform.position.x > this.transform.position.x)
-                    {
-                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback / 2);
-                    }
-                    else if (enemy.transform.position.x < this.transform.position.x)
-                    {
-                        enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback / 2);
-                    }
-
-                    if (enemy.name.Contains("Melee"))
-                    {
-                        if (enemy.GetComponent<EnemyController>().isGrounded)
-                        {
-                            enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
-                        }
-                    }
-                    else if (enemy.name.Contains("Ranged"))
-                    {
-                        if (enemy.GetComponent<RangedEnemy>().isGrounded)
-                        {
-                            enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
-                        }
-                    }
-                }
-            }
-
-            if (!isGrounded)
+            if (!isGrounded && !onEnemy)
             {
                 rb.velocity = Vector2.down * poundDownForce/2;
+                groundPoundCheck.gameObject.SetActive(true);
+                normalBodyCollision.gameObject.SetActive(false);
             }
-            else if (isGrounded)
+            else if (isGrounded || onEnemy)
             {
-                usingGroundPound = false;
+                if (isGrounded)
+                {
+                    normalBodyCollision.gameObject.SetActive(true);
+                    groundPoundCheck.gameObject.SetActive(false);
+                    usingGroundPound = false;
+                }
             }
         }
         //Knockback
@@ -274,9 +235,7 @@ public class PlayerController : MonoBehaviour
             {
                 canMove = false;
                 anim.SetTrigger("Hurt");
-                reaperSlashActivated = false;
                 Time.timeScale = 1f;
-                reaperSlashArea.SetActive(false);
 
                 knockbackDuration -= Time.deltaTime;
 
@@ -350,18 +309,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (slashing)
-            {
-                if (enemy.name.Contains("Melee"))
-                {
-                    enemy.GetComponent<EnemyController>().TakeDamage(reaperSlashDamage);
-                }
-                else if (enemy.name.Contains("Ranged"))
-                {
-                    enemy.GetComponent<RangedEnemy>().TakeDamage(reaperSlashDamage);
-                }
-            }
-
             if (dashing)
             {
                 if (enemy.name.Contains("Melee"))
@@ -422,6 +369,22 @@ public class PlayerController : MonoBehaviour
         {
             respawnPosition = other.transform.position; // Set player respawn position to entered Checkpoint's position
         }
+        if (usingGroundPound)
+        {
+            if (other.tag == "Enemy")
+            {
+                if (other.transform.position.x > transform.position.x)
+                {
+                    other.GetComponent<Rigidbody2D>().AddForce(Vector2.right * poundDownKnockback);
+                    other.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
+                }
+                else if (other.transform.position.x < transform.position.x)
+                {
+                    other.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback);
+                    other.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
+                }
+            }
+        }
     }
 
     public void UpdatePlayerStats()
@@ -432,7 +395,6 @@ public class PlayerController : MonoBehaviour
             dashDamage = 2;
             slamDamage = 2;
             uppercutDamage = 2;
-            reaperSlashDamage = 2;
         }
         else if (rageMeter.mana.manaAmount > 40 && rageMeter.mana.manaAmount < 60)
         {
@@ -440,7 +402,6 @@ public class PlayerController : MonoBehaviour
             dashDamage = 3;
             slamDamage = 3;
             uppercutDamage = 3;
-            reaperSlashDamage = 3;
         }
         else if (rageMeter.mana.manaAmount > 60 && rageMeter.mana.manaAmount < 80)
         {
@@ -448,7 +409,6 @@ public class PlayerController : MonoBehaviour
             dashDamage = 4;
             slamDamage = 4;
             uppercutDamage = 4;
-            reaperSlashDamage = 4;
         }
         else if (rageMeter.mana.manaAmount > 80)
         {
@@ -456,7 +416,6 @@ public class PlayerController : MonoBehaviour
             dashDamage = 5;
             slamDamage = 5;
             uppercutDamage = 5;
-            reaperSlashDamage = 5;
         }
         else if (rageMeter.mana.manaAmount < 20)
         {
@@ -464,7 +423,6 @@ public class PlayerController : MonoBehaviour
             dashDamage = 1;
             slamDamage = 1;
             uppercutDamage = 1;
-            reaperSlashDamage = 1;
         }
     }
 
@@ -472,6 +430,5 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.DrawWireSphere(attackRange.position, attackRangeRadius);
         Gizmos.DrawWireSphere(groundcheck.position, groundcheckRadius);
-        Gizmos.DrawWireSphere(groundPoundCheck.position, 2f);
     }
 }

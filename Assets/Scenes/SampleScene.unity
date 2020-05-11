@@ -3677,6 +3677,11 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8706028202019520145, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 8d79a582408be9741be95b4ef1e056fa, type: 2}
     - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
       propertyPath: uppercutAirBoost
@@ -3702,9 +3707,53 @@ PrefabInstance:
       propertyPath: standardAttackDamage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1535175780990763636, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: attackRangeRadius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 470992969, guid: 848b87241bfa7394b9ab60dfe3c23768, type: 3}
       propertyPath: m_MinVertexDistance
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706028202019520142, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233166331, guid: 848b87241bfa7394b9ab60dfe3c23768, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005366787366168484, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005366787366168484, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.6855564
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005366787366168484, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.1766987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559861171193539003, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559861171193539003, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689365967994044621, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 848b87241bfa7394b9ab60dfe3c23768, type: 3}
