@@ -193,6 +193,7 @@ public class PlayerController : MonoBehaviour
         {
             if (currentDashDuration >= 0)
             {
+                normalBodyCollision.gameObject.SetActive(false);
                 currentDashDuration -= Time.deltaTime;
 
                 if (transform.localScale.x > 0)
@@ -206,6 +207,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (currentDashDuration <= 0)
             {
+                normalBodyCollision.gameObject.SetActive(true);
                 dashing = false;
             }
         }

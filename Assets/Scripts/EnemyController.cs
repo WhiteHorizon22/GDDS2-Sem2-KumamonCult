@@ -171,9 +171,16 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.tag == "Player") && player.usingGroundPound)
+        if ((other.tag == "Player"))
         {
-            TakeDamage(player.slamDamage);
+            if (player.usingGroundPound)
+            {
+                TakeDamage(player.slamDamage);
+            }
+            else if (player.dashing)
+            {
+                TakeDamage(player.dashDamage);
+            }
         }
     }
 

@@ -118,6 +118,21 @@ public class RangedEnemy : MonoBehaviour
 
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if ((other.tag == "Player"))
+        {
+            if (player.usingGroundPound)
+            {
+                TakeDamage(player.slamDamage);
+            }
+            else if (player.dashing)
+            {
+                TakeDamage(player.dashDamage);
+            }
+        }
+    }
+
     void UpdateHealthBar()
     {
         healthBar.transform.localScale = new Vector3(currentHealth / 10f, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
