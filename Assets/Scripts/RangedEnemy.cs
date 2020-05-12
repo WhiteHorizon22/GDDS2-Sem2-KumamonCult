@@ -8,6 +8,7 @@ public class RangedEnemy : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer sr;
+    LevelManager theManager;
 
     [Header("Health")]
     public int maxHealth;
@@ -39,6 +40,8 @@ public class RangedEnemy : MonoBehaviour
     public GameObject attackEffect;
     public GameObject ammo;
 
+    public StaminaBar rageMeter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +49,8 @@ public class RangedEnemy : MonoBehaviour
         currentHealth = maxHealth;
         player = FindObjectOfType<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
+        rageMeter = FindObjectOfType<StaminaBar>();
+        theManager = FindObjectOfType<LevelManager>();
         UpdateHealthBar();
     }
 
@@ -95,6 +100,10 @@ public class RangedEnemy : MonoBehaviour
     {
         stunned = true;
 
+        rageMeter.mana.IncreaseMana(1);
+
+        theManager.AddPoints(10);
+
         currentHealth -= damage;
         UpdateHealthBar();
         Destroy(Instantiate(attackEffect, rb.transform), 2);
@@ -111,9 +120,10 @@ public class RangedEnemy : MonoBehaviour
 
     void Die()
     {
+        rageMeter.mana.IncreaseMana(2);
         Destroy(gameObject);
         //Die animation
-
+        theManager.AddPoints(100);
         //Disable the Enemy
 
     }

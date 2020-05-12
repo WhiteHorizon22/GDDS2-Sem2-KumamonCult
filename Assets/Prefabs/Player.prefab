@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4559861171193539003}
   m_Layer: 9
   m_Name: GroundPoundCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.06631446, y: -0.68926334}
@@ -57,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1458521918}
   - component: {fileID: 1458521919}
+  - component: {fileID: 1792900978}
   m_Layer: 9
   m_Name: AttackRange
   m_TagString: Untagged
@@ -174,6 +175,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1792900978
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458521917}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6754d714a36b39245a3f5b7f97f24303, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5689365967994044621
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,9 +204,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6491332314991449825}
   - component: {fileID: 4120582433709229820}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: StandardBodyCollision
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -363,8 +383,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 1.5
+  m_Material: {fileID: 6200000, guid: 8d79a582408be9741be95b4ef1e056fa, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -388,7 +408,7 @@ MonoBehaviour:
   currentHealth: 6
   isMoving: 0
   moveSpeed: 8
-  jumpHeight: 10
+  jumpHeight: 12
   doubleJumpUsed: 0
   canMove: 0
   groundcheck: {fileID: 8706028200275015906}
@@ -402,7 +422,7 @@ MonoBehaviour:
   knockbackStrength: 30
   originKnockbackDuration: 0.5
   attackRange: {fileID: 1458521918}
-  attackRangeRadius: 2
+  attackRangeRadius: 1
   attackable:
     serializedVersion: 2
     m_Bits: 1024

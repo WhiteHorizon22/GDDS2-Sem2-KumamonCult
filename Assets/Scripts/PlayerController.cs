@@ -195,7 +195,6 @@ public class PlayerController : MonoBehaviour
         {
             if (currentDashDuration >= 0)
             {
-                normalBodyCollision.gameObject.SetActive(false);
                 currentDashDuration -= Time.deltaTime;
 
                 if (transform.localScale.x > 0)
@@ -215,24 +214,15 @@ public class PlayerController : MonoBehaviour
         }
         else if (usingGroundPound & !knockedBack)
         {
-            if (!isGrounded && !onEnemy)
+            if (!isGrounded)
             {
                 rb.velocity = Vector2.down * poundDownForce/2;
                 groundPoundCheck.gameObject.SetActive(true);
-                normalBodyCollision.gameObject.SetActive(false);
             }
-            else if (isGrounded || onEnemy)
+            else
             {
-                if (onEnemy)
-                {
-                    normalBodyCollision.gameObject.SetActive(false);
-                }
-                else if (isGrounded)
-                {
-                    normalBodyCollision.gameObject.SetActive(true);
-                    groundPoundCheck.gameObject.SetActive(false);
-                    usingGroundPound = false;
-                }
+                groundPoundCheck.gameObject.SetActive(false);
+                usingGroundPound = false;
             }
         }
         //Knockback
@@ -242,6 +232,8 @@ public class PlayerController : MonoBehaviour
             if (knockbackDuration >= 0)
             {
                 canMove = false;
+                dashing = false;
+                usingGroundPound = false;
                 anim.SetTrigger("Hurt");
                 Time.timeScale = 1f;
 
