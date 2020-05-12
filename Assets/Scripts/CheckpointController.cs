@@ -10,6 +10,7 @@ public class CheckpointController : MonoBehaviour
     public Sprite flagClosed;
     public Shop shopMenu;
     public GameObject popUpButton;
+    LevelManager theManager;
 
     public bool checkpointActive;
 
@@ -21,6 +22,7 @@ public class CheckpointController : MonoBehaviour
         //Get andd Store a reference to the SpriteRenderer component
         theSpriteRenderer = GetComponent<SpriteRenderer>();
         checkpointActive = false;
+        theManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -55,6 +57,7 @@ public class CheckpointController : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.S) && !checkpointActive)
             {
+                theManager.AddPoints(5000);
                 Destroy(gameObject);
             }
         }

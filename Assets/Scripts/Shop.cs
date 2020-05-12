@@ -12,15 +12,19 @@ public class Shop : MonoBehaviour
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+        player = FindObjectOfType<PlayerController>();
     }
 
-    void Heal()
+    public void Heal()
     {
-        player.Heal(6);
-        levelManager.LosePoints(1000);
+        if (levelManager.pointsCount >= 1000)
+        {
+            player.Heal(6);
+            levelManager.LosePoints(1000);
+        }
     }
 
-    void LeaveShop()
+    public void LeaveShop()
     {
         Time.timeScale = 1f;
         this.gameObject.SetActive(false);
