@@ -17,7 +17,6 @@ public class PauseScreen : MonoBehaviour
     {
         Time.timeScale = 0f;
         pauseScreen.SetActive(true);
-        theManager.levelMusic.Pause();
         Debug.Log(Time.timeScale);
         GamePaused = true;
     }
@@ -26,7 +25,6 @@ public class PauseScreen : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         pauseScreen.SetActive(false);
-        theManager.levelMusic.Play();
         GamePaused = false;
     }
 
