@@ -15,16 +15,13 @@ public class StartMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            creditsScreen.SetActive(false);
-        }
+
     }
 
     //New Game
     public void NewGame()
     {
-        SceneManager.LoadScene("TutorialLevel");
+        SceneManager.LoadScene("SampleScene");
     }
 
     //Quit Game
@@ -33,9 +30,9 @@ public class StartMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void ReturntoMenu()
+    public void Back()
     {
-        SceneManager.LoadScene("Start Menu");
+         creditsScreen.SetActive(false);
     }
 
     public void Credits()
