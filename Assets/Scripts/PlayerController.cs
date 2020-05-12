@@ -42,12 +42,12 @@ public class PlayerController : MonoBehaviour
     float nextAttackTime = 0f;
 
     [Header("Damage")]
-    public int standardAttackDamage;
-    public int standardAttackBoost;
-    public int standardAttackKnockback;
-    public int uppercutDamage;
-    public int dashDamage;
-    public int slamDamage;
+    public float standardAttackDamage;
+    public float standardAttackBoost;
+    public float standardAttackKnockback;
+    public float uppercutDamage;
+    public float dashDamage;
+    public float slamDamage;
 
     [Header("Uppercut")]
     public float uppercutAirBoost;
@@ -69,6 +69,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Colliders")]
     public GameObject normalBodyCollision;
+
+    [Header("SFX")]
+    public AudioSource dash;
+    public AudioSource slam;
+    public AudioSource uppercut;
 
 
     public StaminaBar rageMeter;
@@ -163,6 +168,7 @@ public class PlayerController : MonoBehaviour
                 //Uppercut
                 if (Input.GetKeyDown(KeyCode.I))
                 {
+                    uppercut.Play();
                     rb.AddForce(Vector2.up * uppercutAirBoost);
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
@@ -171,6 +177,7 @@ public class PlayerController : MonoBehaviour
                 //Groundpound and Slam
                 if (Input.GetKeyDown(KeyCode.K))
                 {
+                    slam.Play();
                     if (isGrounded)
                     {
                         Attack();
@@ -187,6 +194,7 @@ public class PlayerController : MonoBehaviour
             //Dash
             if (Input.GetKeyDown(KeyCode.L))
             {
+                dash.Play();
                 currentDashDuration = dashDuration;
                 dashing = true;
             }

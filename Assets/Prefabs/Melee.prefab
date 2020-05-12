@@ -268,9 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d486fdd6521e241b8824aa6c1c7a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 10
+  maxHealth: 20
+  currentHealth: 20
   healthBar: {fileID: 7640249657591166004}
+  enemySize: 2
   groundcheck: {fileID: 4989284577874666926}
   groundcheckRadius: 0.5
   ground:
@@ -297,6 +298,7 @@ MonoBehaviour:
     type: 3}
   attackEffect: {fileID: 1651134098349768456, guid: 29db25d061efae04dae7932544a65cbd,
     type: 3}
+  rageMeter: {fileID: 0}
 --- !u!95 &43151864
 Animator:
   serializedVersion: 3

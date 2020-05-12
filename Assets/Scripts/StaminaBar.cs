@@ -49,19 +49,12 @@ public class StaminaBar : MonoBehaviour
         public Mana()
         {
             manaAmount = 0;
-            manaRegenAmount = 2f;
+            manaRegenAmount = 5f;
         }
         public void Update()
         {
-            if (Input.GetButton("Fire2") && manaAmount > 0)
-            {
-                manaAmount -= manaRegenAmount * Time.unscaledDeltaTime;
-            }
-            else
-            {
-                manaAmount -= manaRegenAmount * Time.unscaledDeltaTime;
-                manaAmount = Mathf.Clamp(manaAmount, 0f, MANA_MAX);
-            }
+            manaAmount -= manaRegenAmount * Time.deltaTime;
+            manaAmount = Mathf.Clamp(manaAmount, 0f, MANA_MAX);
         }
 
         public void IncreaseMana(int amount)

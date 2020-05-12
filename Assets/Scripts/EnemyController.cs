@@ -11,9 +11,12 @@ public class EnemyController : MonoBehaviour
     LevelManager theManager;
 
     [Header("Health")]
-    public int maxHealth;
-    public int currentHealth;
+    public float maxHealth;
+    public float currentHealth;
     public GameObject healthBar;
+
+    [Header("Looks")]
+    public float enemySize;
 
     [Header("Ground Check")]
     public Transform groundcheck;
@@ -94,24 +97,24 @@ public class EnemyController : MonoBehaviour
                         anim.SetBool("chase", false);
                         if (!canMoveAhead & (player.transform.position.x > front.transform.position.x))
                         {
-                            transform.localScale = new Vector3(2, 2, transform.localScale.z);
+                            transform.localScale = new Vector3(enemySize, enemySize, transform.localScale.z);
                         }
                         else if (player.transform.position.x < front.transform.position.x)
                         {
-                            transform.localScale = new Vector3(-2, 2, transform.localScale.z);
+                            transform.localScale = new Vector3(-enemySize, enemySize, transform.localScale.z);
                         }
                     }
                     else
                     {
                         if (player.transform.position.x > front.transform.position.x)
                         {
-                            transform.localScale = new Vector3(2, 2, transform.localScale.z);
+                            transform.localScale = new Vector3(enemySize, enemySize, transform.localScale.z);
                             anim.SetBool("chase", true);
                             rb.velocity = new Vector2(speed, rb.velocity.y);
                         }
                         else if (player.transform.position.x < front.transform.position.x)
                         {
-                            transform.localScale = new Vector3(-2, 2, transform.localScale.z);
+                            transform.localScale = new Vector3(-enemySize, enemySize, transform.localScale.z);
                             anim.SetBool("chase", true);
                             rb.velocity = new Vector2(-speed, rb.velocity.y);
                         }
@@ -122,7 +125,6 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            print("stunned");
             if (stunTime > 0)
             {
                 anim.SetBool("chase", false);
@@ -136,12 +138,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         stunned = true;
 
-        rageMeter.mana.IncreaseMana(1);
-
+        rageMeter.mana.IncreaseMana(2);
         theManager.AddPoints(10);
 
         currentHealth -= damage;

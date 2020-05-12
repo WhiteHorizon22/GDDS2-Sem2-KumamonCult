@@ -11,9 +11,12 @@ public class RangedEnemy : MonoBehaviour
     LevelManager theManager;
 
     [Header("Health")]
-    public int maxHealth;
-    public int currentHealth;
+    public float maxHealth;
+    public float currentHealth;
     public GameObject healthBar;
+
+    [Header("Looks")]
+    public float enemySize;
 
     [Header("Ground Check")]
     public Transform groundcheck;
@@ -66,11 +69,11 @@ public class RangedEnemy : MonoBehaviour
         {
             if (player.transform.position.x > transform.position.x)
             {
-                transform.localScale = new Vector3(2, 2, transform.localScale.z);
+                transform.localScale = new Vector3(enemySize, enemySize, transform.localScale.z);
             }
             else if (player.transform.position.x < transform.position.x)
             {
-                transform.localScale = new Vector3(-2, 2, transform.localScale.z);
+                transform.localScale = new Vector3(-enemySize, enemySize, transform.localScale.z);
             }
 
             if (playerInSight)
@@ -96,7 +99,7 @@ public class RangedEnemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         stunned = true;
 

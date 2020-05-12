@@ -227,6 +227,7 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 3
   healthBar: {fileID: 7574822235122886099}
+  enemySize: 2
   groundcheck: {fileID: 516582159961625926}
   groundcheckRadius: 0.3
   ground:
@@ -239,7 +240,7 @@ MonoBehaviour:
   playerInSight: 0
   playerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   chasing: 0
   patrolling: 0
   stunned: 0
@@ -250,6 +251,7 @@ MonoBehaviour:
   attackEffect: {fileID: 1651134098349768456, guid: 29db25d061efae04dae7932544a65cbd,
     type: 3}
   ammo: {fileID: 1096994515819539398, guid: fa280555378cfd246b70028b7cec542d, type: 3}
+  rageMeter: {fileID: 0}
 --- !u!1 &7574822235122886099
 GameObject:
   m_ObjectHideFlags: 0
