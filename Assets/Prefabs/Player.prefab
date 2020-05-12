@@ -383,6 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   respawnPosition: {x: 0, y: 0, z: 0}
+  originalSpawn: {x: 0, y: 0, z: 0}
   maxHealth: 6
   currentHealth: 6
   isMoving: 0
@@ -420,9 +421,9 @@ MonoBehaviour:
   usingGroundPound: 0
   groundPoundCheck: {fileID: 1233166332}
   onEnemy: 0
-  dashSpeed: 20
+  dashSpeed: 50
   currentDashDuration: 0
-  dashDuration: 0.3
+  dashDuration: 0.1
   dashing: 0
   normalBodyCollision: {fileID: 5689365967994044621}
   rageMeter: {fileID: 0}

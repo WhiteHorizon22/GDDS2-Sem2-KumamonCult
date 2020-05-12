@@ -71,6 +71,17 @@ public class StaminaBar : MonoBehaviour
                 manaAmount += amount;
             }
         }
+        public void DecreaseMana(int amount)
+        {
+            if (manaAmount > 0)
+            {
+                manaAmount -= amount;
+            }
+            else
+            {
+                manaAmount = 0;
+            }
+        }
 
         public float GetManaNormalized()
         {

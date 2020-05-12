@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -951299169
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300602, guid: 995eccfa3d760874ca27e422592380dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,7 +95,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagOpen: {fileID: 21300594, guid: 995eccfa3d760874ca27e422592380dd, type: 3}
   flagClosed: {fileID: 21300602, guid: 995eccfa3d760874ca27e422592380dd, type: 3}
+  shopMenu: {fileID: 0}
+  popUpButton: {fileID: 0}
   checkpointActive: 0
+  checkpointInUse: 0
 --- !u!58 &7011091265397998783
 CircleCollider2D:
   m_ObjectHideFlags: 0

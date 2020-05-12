@@ -223,7 +223,11 @@ public class PlayerController : MonoBehaviour
             }
             else if (isGrounded || onEnemy)
             {
-                if (isGrounded)
+                if (onEnemy)
+                {
+                    normalBodyCollision.gameObject.SetActive(false);
+                }
+                else if (isGrounded)
                 {
                     normalBodyCollision.gameObject.SetActive(true);
                     groundPoundCheck.gameObject.SetActive(false);
@@ -353,7 +357,7 @@ public class PlayerController : MonoBehaviour
         if (!knockedBack)
         {
             currentHealth -= damage;
-
+            rageMeter.mana.DecreaseMana(5);
             theManager.UpdateHeartMeter();
 
             //hurt

@@ -24,7 +24,9 @@ public class Shop : MonoBehaviour
     {
         if (checkpoint.checkpointInUse == false)
         {
+            Time.timeScale = 1f;
             levelManager.AddPoints(3000);
+            Destroy(gameObject);
         }
     }
 
