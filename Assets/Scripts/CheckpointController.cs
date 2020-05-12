@@ -20,6 +20,7 @@ public class CheckpointController : MonoBehaviour
     {
         //Get andd Store a reference to the SpriteRenderer component
         theSpriteRenderer = GetComponent<SpriteRenderer>();
+        checkpointActive = false;
     }
 
     // Update is called once per frame
@@ -48,15 +49,11 @@ public class CheckpointController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                print("check");
                 checkpointActive = true;
                 shopMenu.gameObject.SetActive(true);
                 Time.timeScale = 0f;
             }
-        }
-        else if (other.tag == "Player")
-        {
-            if (Input.GetKeyDown(KeyCode.J) && !checkpointActive)
+            if (Input.GetKeyDown(KeyCode.S) && !checkpointActive)
             {
                 Destroy(gameObject);
             }
@@ -66,4 +63,5 @@ public class CheckpointController : MonoBehaviour
         //    return;
         //}
     }
+
 }

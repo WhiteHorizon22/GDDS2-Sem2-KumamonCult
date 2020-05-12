@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7011091265397998771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.16, y: 3.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -67,7 +67,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -951299169
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300602, guid: 995eccfa3d760874ca27e422592380dd, type: 3}
@@ -97,7 +97,7 @@ MonoBehaviour:
   flagClosed: {fileID: 21300602, guid: 995eccfa3d760874ca27e422592380dd, type: 3}
   shopMenu: {fileID: 0}
   popUpButton: {fileID: 0}
-  checkpointInUse: 0
+  checkpointActive: 0
 --- !u!58 &7011091265397998783
 CircleCollider2D:
   m_ObjectHideFlags: 0

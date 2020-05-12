@@ -366,6 +366,19 @@ public class PlayerController : MonoBehaviour
         canMove = false;
     }
 
+    public void Heal(int heal)
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += heal;
+        }
+        else
+        {
+            currentHealth = maxHealth;
+        }
+        theManager.UpdateHeartMeter();
+    }
+
     void Die()
     {
         Destroy(gameObject);

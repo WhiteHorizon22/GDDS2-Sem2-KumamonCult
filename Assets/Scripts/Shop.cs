@@ -14,8 +14,9 @@ public class Shop : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
     }
 
-    void SpendPoints()
+    void Heal()
     {
+        player.Heal(6);
         levelManager.LosePoints(1000);
     }
 
