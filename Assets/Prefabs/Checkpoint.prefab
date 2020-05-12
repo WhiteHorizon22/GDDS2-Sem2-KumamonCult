@@ -97,7 +97,6 @@ MonoBehaviour:
   flagClosed: {fileID: 21300602, guid: 995eccfa3d760874ca27e422592380dd, type: 3}
   shopMenu: {fileID: 0}
   popUpButton: {fileID: 0}
-  checkpointActive: 0
   checkpointInUse: 0
 --- !u!58 &7011091265397998783
 CircleCollider2D:

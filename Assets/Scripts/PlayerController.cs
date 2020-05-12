@@ -373,10 +373,6 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Checkpoint")
-        {
-            respawnPosition = other.transform.position; // Set player respawn position to entered Checkpoint's position
-        }
         if (usingGroundPound)
         {
             if (other.tag == "Enemy")
@@ -391,6 +387,17 @@ public class PlayerController : MonoBehaviour
                     other.GetComponent<Rigidbody2D>().AddForce(Vector2.left * poundDownKnockback);
                     other.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
                 }
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Checkpoint")
+        {
+            if (other.GetComponent<CheckpointController>().checkpointActive == true)
+            {
+                respawnPosition = other.transform.position; // Set player respawn position to entered Checkpoint's position
             }
         }
     }

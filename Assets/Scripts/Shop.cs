@@ -7,7 +7,6 @@ public class Shop : MonoBehaviour
 {
     LevelManager levelManager;
     PlayerController player;
-    CheckpointController checkpoint;
 
     // Start is called before the first frame update
     void Start()
@@ -20,18 +19,9 @@ public class Shop : MonoBehaviour
         levelManager.LosePoints(1000);
     }
 
-    void DestroyCheckpoint()
+    void LeaveShop()
     {
-        if (checkpoint.checkpointInUse == false)
-        {
-            Time.timeScale = 1f;
-            levelManager.AddPoints(3000);
-            Destroy(gameObject);
-        }
-    }
-
-    void UseCheckPoint()
-    {
-        checkpoint.checkpointInUse = true;
+        Time.timeScale = 1f;
+        this.gameObject.SetActive(false);
     }
 }
