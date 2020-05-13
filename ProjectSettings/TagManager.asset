@@ -8,6 +8,7 @@ TagManager:
   - Hazard
   - Bullet
   - Checkpoint
+  - Killzone
   layers:
   - Default
   - TransparentFX

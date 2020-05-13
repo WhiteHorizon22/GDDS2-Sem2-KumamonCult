@@ -43,11 +43,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Damage")]
     public float standardAttackDamage;
-    public float standardAttackBoost;
-    public float standardAttackKnockback;
     public float uppercutDamage;
     public float dashDamage;
     public float slamDamage;
+    public float standardAttackBoost;
+    public float standardAttackKnockback;
 
     [Header("Uppercut")]
     public float uppercutAirBoost;
@@ -405,6 +405,11 @@ public class PlayerController : MonoBehaviour
                     other.GetComponent<Rigidbody2D>().AddForce(Vector2.up * poundDownKnockback);
                 }
             }
+        }
+        if (other.tag == "Killzone")
+        {
+            TakeDamage(1);
+            theManager.Respawn();
         }
     }
 
