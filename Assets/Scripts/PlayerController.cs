@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource uppercut;
 
 
-    public StaminaBar rageMeter;
+    StaminaBar rageMeter;
 
     // Start is called before the first frame update
     void Start()
@@ -305,15 +305,19 @@ public class PlayerController : MonoBehaviour
             //If using Uppercut
             if (Input.GetKeyDown(KeyCode.I))
             {
-                enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
-
                 if (enemy.name.Contains("Melee"))
                 {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
                     enemy.GetComponent<EnemyController>().TakeDamage(uppercutDamage);
                 }
                 else if (enemy.name.Contains("Ranged"))
                 {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
                     enemy.GetComponent<RangedEnemy>().TakeDamage(uppercutDamage);
+                }
+                else if (enemy.name.Contains("EnemyFireball"))
+                {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback * 6);
                 }
             }
 
