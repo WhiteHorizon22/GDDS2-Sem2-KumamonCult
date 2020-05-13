@@ -116,19 +116,18 @@ public class RangedEnemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Instantiate(deathEffect, transform);
             Die();
         }
     }
 
     void Die()
     {
+        Vector3 pos = transform.position;
+        Quaternion rotation = transform.rotation;
+        Destroy(Instantiate(deathEffect, pos, rotation), 1);
         rageMeter.mana.IncreaseMana(2);
-        Destroy(gameObject);
-        //Die animation
         theManager.AddPoints(100);
-        //Disable the Enemy
-
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
