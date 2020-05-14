@@ -141,6 +141,11 @@ public class LevelManager : MonoBehaviour
 
         livesText.text = "Lives: " + lifeCount;
 
+        if (lifeCount <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
         //coinSound.Play();
     }
 
