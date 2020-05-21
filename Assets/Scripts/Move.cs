@@ -15,19 +15,15 @@ public class Move : MonoBehaviour {
 
 	}
 
-    public void UpKey() {
+    public void Left() {
 
     }
 
-    public void DownKey() {
+    public void Right() {
 
     }
 
-    public void LeftKey() {
-
-    }
-
-    public void RightKey() {
+    public void Attack() {
 
     }
 }
