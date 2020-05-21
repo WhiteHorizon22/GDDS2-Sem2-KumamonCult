@@ -11,19 +11,23 @@ public class Move : MonoBehaviour {
     bool[] touchKeys = new bool[4];
 
 	void Start() {
-        // Initial velocity
+
 
 	}
 
-    public void Left() {
+    public void UpKey() {
 
     }
 
-    public void Right() {
+    public void DownKey() {
 
     }
 
-    public void Attack() {
+    public void LeftKey() {
+
+    }
+
+    public void RightKey() {
 
     }
 }
