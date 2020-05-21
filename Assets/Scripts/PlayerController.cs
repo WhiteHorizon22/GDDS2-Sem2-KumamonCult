@@ -115,126 +115,127 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("IsGrounded", false);
         }
-
-        if (!dashing && !usingGroundPound && !knockedBack && canMove)
+        if (canMove)
         {
-            //Manual Movement
-            float h = Input.GetAxisRaw("Horizontal");
+            if (!dashing && !usingGroundPound && !knockedBack)
+            {
+                //Manual Movement
+                float h = Input.GetAxisRaw("Horizontal");
 
-            rb.velocity = new Vector2(moveSpeed * h, rb.velocity.y);
-            if (h > 0) //Face Forward
-            {
-                transform.localScale = new Vector2(1f, transform.localScale.y);
-            }
-            else if (h < 0)
-            {
-                transform.localScale = new Vector2(-1f, transform.localScale.y);
-            }
-
-            if (h == 0)
-            {
-                anim.SetBool("IsMoving", false);
-            }
-            else
-            {
-                anim.SetBool("IsMoving", true);
-            }
-
-            //Jumping
-            if (Input.GetButtonDown("Jump") && (isGrounded || onEnemy))
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-            }
-            else if (Input.GetButtonDown("Jump") && !isGrounded && !doubleJumpUsed)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-                doubleJumpUsed = true;
-            }
-            //Reset Double Jump when Grounded
-            if (isGrounded)
-            {
-                doubleJumpUsed = false;
-            }
-
-            //Attacking
-            if (Time.time >= nextAttackTime)
-            {
-                if (Input.GetKey(KeyCode.J))
+                rb.velocity = new Vector2(moveSpeed * h, rb.velocity.y);
+                if (h > 0) //Face Forward
                 {
-                    Attack();
-                    nextAttackTime = Time.time + 1f / attackRate;
+                    transform.localScale = new Vector2(1f, transform.localScale.y);
+                }
+                else if (h < 0)
+                {
+                    transform.localScale = new Vector2(-1f, transform.localScale.y);
                 }
 
-                //Uppercut
-                if (Input.GetKeyDown(KeyCode.I))
+                if (h == 0)
                 {
-                    uppercut.Play();
-                    rb.AddForce(Vector2.up * uppercutAirBoost);
-                    Attack();
-                    nextAttackTime = Time.time + 1f / attackRate;
+                    anim.SetBool("IsMoving", false);
+                }
+                else
+                {
+                    anim.SetBool("IsMoving", true);
                 }
 
-                //Groundpound and Slam
-                if (Input.GetKeyDown(KeyCode.K))
+                //Jumping
+                if (Input.GetButtonDown("Jump") && isGrounded)
                 {
-                    slam.Play();
-                    if (isGrounded)
+                    rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                }
+                else if (Input.GetButtonDown("Jump") && !isGrounded && !doubleJumpUsed)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                    doubleJumpUsed = true;
+                }
+                //Reset Double Jump when Grounded
+                if (isGrounded)
+                {
+                    doubleJumpUsed = false;
+                }
+
+                //Attacking
+                if (Time.time >= nextAttackTime)
+                {
+                    if (Input.GetKey(KeyCode.J))
                     {
                         Attack();
                         nextAttackTime = Time.time + 1f / attackRate;
                     }
-                    else if (!isGrounded)
+
+                    //Uppercut
+                    if (Input.GetKeyDown(KeyCode.I))
                     {
+                        uppercut.Play();
+                        rb.AddForce(Vector2.up * uppercutAirBoost);
                         Attack();
-                        usingGroundPound = true;
                         nextAttackTime = Time.time + 1f / attackRate;
                     }
-                }
-            }
-            //Dash
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                dash.Play();
-                currentDashDuration = dashDuration;
-                dashing = true;
-            }
-        }
-        else if (dashing & !knockedBack)
-        {
-            if (currentDashDuration >= 0)
-            {
-                currentDashDuration -= Time.deltaTime;
 
-                if (transform.localScale.x > 0)
-                {
-                    rb.velocity = Vector2.right * dashSpeed;
+                    //Groundpound and Slam
+                    if (Input.GetKeyDown(KeyCode.K))
+                    {
+                        slam.Play();
+                        if (isGrounded)
+                        {
+                            Attack();
+                            nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                        else if (!isGrounded)
+                        {
+                            Attack();
+                            usingGroundPound = true;
+                            nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                    }
                 }
-                else if (transform.localScale.x < 0)
+                //Dash
+                if (Input.GetKeyDown(KeyCode.L))
                 {
-                    rb.velocity = Vector2.left * dashSpeed;
+                    dash.Play();
+                    currentDashDuration = dashDuration;
+                    dashing = true;
                 }
             }
-            else if (currentDashDuration <= 0)
+            else if (dashing & !knockedBack)
             {
-                normalBodyCollision.gameObject.SetActive(true);
-                dashing = false;
+                if (currentDashDuration >= 0)
+                {
+                    currentDashDuration -= Time.deltaTime;
+
+                    if (transform.localScale.x > 0)
+                    {
+                        rb.velocity = Vector2.right * dashSpeed;
+                    }
+                    else if (transform.localScale.x < 0)
+                    {
+                        rb.velocity = Vector2.left * dashSpeed;
+                    }
+                }
+                else if (currentDashDuration <= 0)
+                {
+                    normalBodyCollision.gameObject.SetActive(true);
+                    dashing = false;
+                }
+            }
+            else if (usingGroundPound & !knockedBack)
+            {
+                if (!isGrounded)
+                {
+                    rb.velocity = Vector2.down * poundDownForce / 2;
+                    groundPoundCheck.gameObject.SetActive(true);
+                }
+                else
+                {
+                    groundPoundCheck.gameObject.SetActive(false);
+                    usingGroundPound = false;
+                }
             }
         }
-        else if (usingGroundPound & !knockedBack)
-        {
-            if (!isGrounded)
-            {
-                rb.velocity = Vector2.down * poundDownForce/2;
-                groundPoundCheck.gameObject.SetActive(true);
-            }
-            else
-            {
-                groundPoundCheck.gameObject.SetActive(false);
-                usingGroundPound = false;
-            }
-        }
-        //Knockback
-        else
+        else if (knockedBack)
         {
             rb.velocity = Vector2.zero;
             if (knockbackDuration >= 0)
@@ -242,8 +243,10 @@ public class PlayerController : MonoBehaviour
                 canMove = false;
                 dashing = false;
                 usingGroundPound = false;
+                normalBodyCollision.gameObject.SetActive(true);
                 anim.SetTrigger("Hurt");
                 Time.timeScale = 1f;
+
 
                 knockbackDuration -= Time.deltaTime;
 
@@ -363,8 +366,11 @@ public class PlayerController : MonoBehaviour
             currentHealth -= damage;
             rageMeter.mana.DecreaseMana(5);
             theManager.UpdateHeartMeter();
-
-            //hurt
+        }
+        if (currentHealth <= 0)
+        {
+            print("Die");
+            theManager.Respawn();
         }
         knockedBack = true;
         canMove = false;
@@ -381,11 +387,6 @@ public class PlayerController : MonoBehaviour
             currentHealth = maxHealth;
         }
         theManager.UpdateHeartMeter();
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -406,6 +407,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
         if (other.tag == "Killzone")
         {
             TakeDamage(1);

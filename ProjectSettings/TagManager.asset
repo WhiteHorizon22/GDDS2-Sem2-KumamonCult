@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Checkpoint
   - Killzone
+  - Ground
   layers:
   - Default
   - TransparentFX

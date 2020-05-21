@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2234801213882084793}
   m_Layer: 10
   m_Name: EnemyFireball
-  m_TagString: Hazard
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

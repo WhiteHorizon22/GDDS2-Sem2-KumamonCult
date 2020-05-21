@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     public Image heart2;
     public Image heart3;
 
-    private bool respawning;
+    //private bool respawning;
 
     // Store sprtie images heartFull, heartHalf and heartEmpty
     public Sprite heartFull;
@@ -61,11 +61,11 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (thePlayer.currentHealth <= 0 && !respawning) //starts Respawn() if health is 0 or below
-        {
-            Respawn();
-            respawning = true;
-        }
+        //if (thePlayer.currentHealth <= 0 && !respawning) //starts Respawn() if health is 0 or below
+        //{
+        //    Respawn();
+        //    respawning = true;
+        //}
     }
 
     public void Respawn()
@@ -78,12 +78,12 @@ public class LevelManager : MonoBehaviour
         else
         {
             // If you do not have anymore lives, save the scene for retry, then open up the gameover screen
-            PlayerPrefs.SetInt("lastLevel", thisScene);
-            thePlayer.gameObject.SetActive(false);  // Deactivate the player in the world
-            Instantiate(deathSplosion, thePlayer.transform.position, thePlayer.transform.rotation);
-            gameOverScreen.SetActive(true);
-            levelMusic.Stop();
-            gameOverMusic.Play();
+            //PlayerPrefs.SetInt("lastLevel", thisScene);
+            //thePlayer.gameObject.SetActive(false);  // Deactivate the player in the world
+            //Instantiate(deathSplosion, thePlayer.transform.position, thePlayer.transform.rotation);
+            //gameOverScreen.SetActive(true);
+            //levelMusic.Stop();
+            //gameOverMusic.Play();
         }
     }
 
@@ -103,8 +103,7 @@ public class LevelManager : MonoBehaviour
         UpdateHeartMeter();
 
         //healthCount = maxHealth;
-        respawning = false;
-        //UpdateHeartMeter(); //Update the heart meter when player respawns
+        UpdateHeartMeter(); //Update the heart meter when player respawns
         thePlayer.transform.position = thePlayer.respawnPosition; // Move player to respawn position
         thePlayer.rb.velocity = new Vector2(0, 0);
         thePlayer.doubleJumpUsed = false;

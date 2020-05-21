@@ -24,6 +24,10 @@ public class EnemyBullet : MonoBehaviour
 
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
@@ -36,6 +40,7 @@ public class EnemyBullet : MonoBehaviour
         if (other.tag == "Player")
         {
             player.TakeDamage(damageToGive);
+            Destroy(gameObject);
         }
     }
 
