@@ -320,7 +320,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (enemy.name.Contains("EnemyFireball"))
                 {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback * 6);
+                    enemy.GetComponent<EnemyBullet>().Deflected();
                 }
             }
 

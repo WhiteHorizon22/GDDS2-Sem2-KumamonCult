@@ -10,6 +10,8 @@ TagManager:
   - Checkpoint
   - Killzone
   - Ground
+  - Melee
+  - Ranged
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Ground
   - Player
   - Attackable
-  - 
+  - Deflected
   - 
   - 
   - 

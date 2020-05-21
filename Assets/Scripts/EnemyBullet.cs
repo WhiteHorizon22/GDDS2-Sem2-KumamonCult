@@ -11,12 +11,16 @@ public class EnemyBullet : MonoBehaviour
     PlayerController player;
     public float bulletForce;
 
+    public bool deflected;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         player = FindObjectOfType<PlayerController>();
+
+        deflected = false;
 
         if (player.gameObject.activeInHierarchy == true)
         {
@@ -35,12 +39,34 @@ public class EnemyBullet : MonoBehaviour
         Destroy(gameObject, 2);
     }
 
+    public void Deflected()
+    {
+        deflected = true;
+        rb.velocity = new Vector2(-moveDirection.x, -moveDirection.y) * bulletForce * 2;
+        gameObject.layer = 11;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             player.TakeDamage(damageToGive);
             Destroy(gameObject);
+        }
+
+        if (deflected)
+        {
+            if (other.tag == "Melee")
+            {
+                other.GetComponent<EnemyController>().TakeDamage(damageToGive);
+                Destroy(gameObject);
+            }
+
+            if (other.tag == "Ranged")
+            {
+                other.GetComponent<RangedEnemy>().TakeDamage(damageToGive);
+                Destroy(gameObject);
+            }
         }
     }
 
