@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 respawnPosition; // Store a respawn position the player will go to whenever she dies
     LevelManager theManager; // Make reference to LevelManager
     public Vector3 originalSpawn;
+    BreakableObject breakableObject;
 
     [Header("Health")]
     public int maxHealth;
@@ -303,6 +304,10 @@ public class PlayerController : MonoBehaviour
                 {
                     enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
                 }
+                else if (enemy.tag == "Destructibles")
+                {
+                    enemy.GetComponent<BreakableObject>().TakeDamage(standardAttackDamage);
+                }
             }
 
             //If using Uppercut
@@ -321,6 +326,10 @@ public class PlayerController : MonoBehaviour
                 else if (enemy.name.Contains("EnemyFireball"))
                 {
                     enemy.GetComponent<EnemyBullet>().Deflected();
+                }
+                else if (enemy.tag == "Destructibles")
+                {
+                    enemy.GetComponent<BreakableObject>().TakeDamage(uppercutDamage);
                 }
             }
 
