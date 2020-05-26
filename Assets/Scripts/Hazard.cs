@@ -22,12 +22,12 @@ public class Hazard : MonoBehaviour
             theManager.Respawn();
         }
         
-        if (other.tag == "Melee")
+        if (other.name.Equals("Melee"))
         {
             other.GetComponent<EnemyController>().Die();
         }
 
-        if (other.tag == "Ranged")
+        if (other.name.Equals("Ranged"))
         {
             other.GetComponent<RangedEnemy>().Die();
         }
