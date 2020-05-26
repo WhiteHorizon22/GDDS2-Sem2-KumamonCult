@@ -56,13 +56,13 @@ public class EnemyBullet : MonoBehaviour
 
         if (deflected)
         {
-            if (other.tag == "Melee")
+            if (other.name.Equals("Melee"))
             {
                 other.GetComponent<EnemyController>().TakeDamage(damageToGive);
                 Destroy(gameObject);
             }
 
-            if (other.tag == "Ranged")
+            if (other.name.Equals("Ranged"))
             {
                 other.GetComponent<RangedEnemy>().TakeDamage(damageToGive);
                 Destroy(gameObject);

@@ -52,7 +52,6 @@ public class PlayerController : MonoBehaviour
     public float standardAttackKnockback;
 
     [Header("Uppercut")]
-    public float uppercutAirBoost;
     public float uppercutKnockback;
 
     [Header("GroundPound & Slam")]
@@ -172,7 +171,7 @@ public class PlayerController : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.I))
                     {
                         uppercut.Play();
-                        rb.AddForce(Vector2.up * uppercutAirBoost);
+                        rb.velocity = new Vector2(rb.velocity.x, uppercutKnockback);
                         Attack();
                         nextAttackTime = Time.time + 1f / attackRate;
                     }
@@ -322,12 +321,12 @@ public class PlayerController : MonoBehaviour
             {
                 if (enemy.name.Contains("Melee"))
                 {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
+                    enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(0, uppercutKnockback);
                     enemy.GetComponent<EnemyController>().TakeDamage(uppercutDamage);
                 }
                 else if (enemy.name.Contains("Ranged"))
                 {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * uppercutKnockback);
+                    enemy.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, uppercutKnockback);
                     enemy.GetComponent<RangedEnemy>().TakeDamage(uppercutDamage);
                 }
                 else if (enemy.name.Contains("EnemyFireball"))
