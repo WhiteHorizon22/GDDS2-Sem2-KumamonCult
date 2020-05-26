@@ -1,0 +1,35 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Hazard : MonoBehaviour
+{
+    PlayerController player;
+    LevelManager theManager;
+    public int damageToGive;
+    // Start is called before the first frame update
+    void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
+        theManager = FindObjectOfType<LevelManager>();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            player.TakeDamage(damageToGive);
+            theManager.Respawn();
+        }
+        
+        if (other.tag == "Melee")
+        {
+            other.GetComponent<EnemyController>().Die();
+        }
+
+        if (other.tag == "Ranged")
+        {
+            other.GetComponent<RangedEnemy>().Die();
+        }
+    }
+}

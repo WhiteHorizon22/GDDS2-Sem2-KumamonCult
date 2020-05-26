@@ -158,7 +158,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         Vector3 pos = transform.position;
         Quaternion rotation = transform.rotation;

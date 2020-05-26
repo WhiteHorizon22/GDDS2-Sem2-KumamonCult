@@ -94,9 +94,11 @@ public class LevelManager : MonoBehaviour
         // Create Object
         Instantiate(deathSplosion, thePlayer.transform.position, thePlayer.transform.rotation);
 
-        thePlayer.currentHealth = thePlayer.maxHealth; //Set health to max
-
-        TakeLives(-1); //Take away 1 Life
+        if (thePlayer.currentHealth <= 0)
+        {
+            TakeLives(-1); //Take away 1 Life
+            thePlayer.currentHealth = thePlayer.maxHealth; //Set health to max
+        }
 
         yield return new WaitForSeconds(waitToRespawn); // How many seconds we want the game to wait for
 

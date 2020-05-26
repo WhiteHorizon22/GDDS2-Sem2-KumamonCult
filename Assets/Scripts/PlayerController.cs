@@ -422,6 +422,11 @@ public class PlayerController : MonoBehaviour
             TakeDamage(1);
             theManager.Respawn();
         }
+
+        if (other.tag == "MovingPlatform")
+        {
+            transform.parent = other.gameObject.transform; //Locks Player as a child under Moving Platform
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -432,6 +437,14 @@ public class PlayerController : MonoBehaviour
             {
                 respawnPosition = other.transform.position; // Set player respawn position to entered Checkpoint's position
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "MovingPlatform")
+        {
+            transform.parent = null; //When Player is away from platform, it is removed from being a child under Moving Platform
         }
     }
 
