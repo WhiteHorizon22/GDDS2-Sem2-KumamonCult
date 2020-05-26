@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     LevelManager theManager; // Make reference to LevelManager
     public Vector3 originalSpawn;
     BreakableObject breakableObject;
+    Chest chestClosed;
 
     [Header("Health")]
     public int maxHealth;
@@ -310,6 +311,10 @@ public class PlayerController : MonoBehaviour
                 {
                     enemy.GetComponent<BreakableObject>().TakeDamage(standardAttackDamage);
                 }
+                else if (enemy.name == "Chest")
+                {
+                    enemy.GetComponent<Chest>().TakeDamage(standardAttackDamage);
+                }
             }
 
             //If using Uppercut
@@ -332,6 +337,10 @@ public class PlayerController : MonoBehaviour
                 else if (enemy.tag == "Destructibles")
                 {
                     enemy.GetComponent<BreakableObject>().TakeDamage(uppercutDamage);
+                }
+                else if (enemy.name == "Chest")
+                {
+                    enemy.GetComponent<Chest>().TakeDamage(uppercutDamage);
                 }
             }
 
