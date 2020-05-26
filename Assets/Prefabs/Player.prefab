@@ -898,10 +898,10 @@ MonoBehaviour:
   standardAttackBoost: 0
   standardAttackKnockback: 75
   uppercutAirBoost: 500
-  uppercutKnockback: 300
+  uppercutKnockback: 500
   poundDownForce: 50
-  poundDownKnockback: 100
-  slamKnockback: 300
+  poundDownKnockback: 400
+  slamKnockback: 500
   usingGroundPound: 0
   groundPoundCheck: {fileID: 1233166332}
   onEnemy: 0

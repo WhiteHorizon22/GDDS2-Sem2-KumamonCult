@@ -134,10 +134,9 @@ GameObject:
   - component: {fileID: 4989284579186292395}
   - component: {fileID: 4989284579186292399}
   - component: {fileID: 43151864}
-  - component: {fileID: 3745773855494545259}
   m_Layer: 10
   m_Name: Melee
-  m_TagString: Melee
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +221,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011367083, y: 0}
+  m_Offset: {x: 0.00092612207, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -233,7 +232,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.70445013, y: 1}
+  m_Size: {x: 0.8142352, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &4989284579186292395
 Rigidbody2D:
@@ -268,8 +267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d486fdd6521e241b8824aa6c1c7a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 20
+  maxHealth: 10
+  currentHealth: 10
   healthBar: {fileID: 7640249657591166004}
   enemySize: 2
   groundcheck: {fileID: 4989284577874666926}
@@ -318,32 +317,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &3745773855494545259
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4989284579186292394}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &7640249657591166004
 GameObject:
   m_ObjectHideFlags: 0

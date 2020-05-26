@@ -228,10 +228,12 @@ public class PlayerController : MonoBehaviour
                 {
                     rb.velocity = Vector2.down * poundDownForce / 2;
                     groundPoundCheck.gameObject.SetActive(true);
+                    normalBodyCollision.gameObject.SetActive(false);
                 }
                 else
                 {
                     groundPoundCheck.gameObject.SetActive(false);
+                    normalBodyCollision.gameObject.SetActive(true);
                     usingGroundPound = false;
                 }
             }
@@ -342,6 +344,10 @@ public class PlayerController : MonoBehaviour
                 else if (enemy.name.Contains("Ranged"))
                 {
                     enemy.GetComponent<RangedEnemy>().TakeDamage(dashDamage);
+                }
+                else if (enemy.tag == "Destructibles")
+                {
+                    enemy.GetComponent<BreakableObject>().TakeDamage(uppercutDamage);
                 }
             }
 
