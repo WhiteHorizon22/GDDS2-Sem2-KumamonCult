@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     public float attackRangeRadius;
     public LayerMask attackable;
     public float attackRate;
-    float nextAttackTime = 0f;
+    public float nextAttackTime = 0f;
 
     [Header("Damage")]
     public float standardAttackDamage;
@@ -118,6 +118,7 @@ public class PlayerController : MonoBehaviour
         }
         if (canMove)
         {
+            #if UNITY_EDITOR
             if (!dashing && !usingGroundPound && !knockedBack)
             {
                 //Manual Movement
@@ -201,6 +202,7 @@ public class PlayerController : MonoBehaviour
                     dashing = true;
                 }
             }
+            #endif
             else if (dashing & !knockedBack)
             {
                 if (currentDashDuration >= 0)
@@ -271,7 +273,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Attack()
+    public void Attack()
     {
         attackRange.GetComponent<AudioSource>().Play();
 
@@ -281,41 +283,6 @@ public class PlayerController : MonoBehaviour
         //Apply Damage to Detected Enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            //If Using basic Attack
-            if (Input.GetKey(KeyCode.J))
-            {
-                if (this.isGrounded == false)
-                {
-                    this.rb.AddForce(Vector2.up * standardAttackBoost);
-                }
-                if (enemy.transform.position.x > this.transform.position.x)
-                {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * standardAttackKnockback);
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackKnockback);
-                }
-                else if (enemy.transform.position.x < this.transform.position.x)
-                {
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * standardAttackKnockback);
-                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackBoost);
-                }
-                if (enemy.name.Contains("Melee"))
-                {
-                    enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
-                }
-                else if (enemy.name.Contains("Ranged"))
-                {
-                    enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
-                }
-                else if (enemy.tag == "Destructibles")
-                {
-                    enemy.GetComponent<BreakableObject>().TakeDamage(standardAttackDamage);
-                }
-                else if (enemy.name == "Chest")
-                {
-                    enemy.GetComponent<Chest>().TakeDamage(standardAttackDamage);
-                }
-            }
-
             //If using Uppercut
             if (Input.GetKeyDown(KeyCode.I))
             {
@@ -377,6 +344,40 @@ public class PlayerController : MonoBehaviour
                 else if (enemy.name.Contains("Ranged"))
                 {
                     enemy.GetComponent<RangedEnemy>().TakeDamage(slamDamage);
+                }
+            }
+            //If Using basic Attack
+            else
+            {
+                if (this.isGrounded == false)
+                {
+                    this.rb.AddForce(Vector2.up * standardAttackBoost);
+                }
+                if (enemy.transform.position.x > this.transform.position.x)
+                {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.right * standardAttackKnockback);
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackKnockback);
+                }
+                else if (enemy.transform.position.x < this.transform.position.x)
+                {
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * standardAttackKnockback);
+                    enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackBoost);
+                }
+                if (enemy.name.Contains("Melee"))
+                {
+                    enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
+                }
+                else if (enemy.name.Contains("Ranged"))
+                {
+                    enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
+                }
+                else if (enemy.tag == "Destructibles")
+                {
+                    enemy.GetComponent<BreakableObject>().TakeDamage(standardAttackDamage);
+                }
+                else if (enemy.name == "Chest")
+                {
+                    enemy.GetComponent<Chest>().TakeDamage(standardAttackDamage);
                 }
             }
         }
