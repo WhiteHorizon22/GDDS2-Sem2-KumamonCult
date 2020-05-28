@@ -479,7 +479,6 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
 
         if (other.tag == "Killzone")
         {
-            TakeDamage(1);
             theManager.Respawn();
         }
 
@@ -493,10 +492,8 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
     {
         if (other.tag == "Checkpoint")
         {
-            if (other.GetComponent<CheckpointController>().checkpointActive == true)
-            {
-                respawnPosition = other.transform.position; // Set player respawn position to entered Checkpoint's position
-            }
+            other.GetComponent<CheckpointController>().checkpointActive = true;
+            respawnPosition = other.transform.position; // Set player respawn position to entered Checkpoint's position
         }
     }
 

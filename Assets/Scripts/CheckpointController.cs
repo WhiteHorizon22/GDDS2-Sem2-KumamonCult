@@ -49,17 +49,7 @@ public class CheckpointController : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                checkpointActive = true;
-                shopMenu.gameObject.SetActive(true);
-                Time.timeScale = 0f;
-            }
-            if (Input.GetKeyDown(KeyCode.S) && !checkpointActive)
-            {
-                theManager.AddPoints(5000);
-                Destroy(gameObject);
-            }
+            checkpointActive = true;
         }
         //else
         //{

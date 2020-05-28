@@ -13,20 +13,11 @@ public class LevelManager : MonoBehaviour
     public int pointsCount; // Keep track of number of coins that the player collected
     public Text pointsText;
 
-    public Text livesText;
-    public int lifeCount;
+    //public Text livesText;
+    //public int lifeCount;
 
     // Make a reference to the 3 heart images
-    public Image heart1;
-    public Image heart2;
-    public Image heart3;
-
-    //private bool respawning;
-
-    // Store sprtie images heartFull, heartHalf and heartEmpty
-    public Sprite heartFull;
-    public Sprite heartHalf;
-    public Sprite heartEmpty;
+    public Text healthText;
 
     public AudioSource coinSound;
     public AudioSource levelMusic;
@@ -55,7 +46,9 @@ public class LevelManager : MonoBehaviour
 
         pointsText.text = "Pts: " + pointsCount;
 
-        livesText.text = "Lives: " + lifeCount;
+        UpdateHeartMeter();
+
+        //livesText.text = "Lives: " + lifeCount;
     }
 
     // Update is called once per frame
@@ -70,21 +63,18 @@ public class LevelManager : MonoBehaviour
 
     public void Respawn()
     {
-        if (thePlayer.currentHealth > 0 || lifeCount > 0)
-        {
-            // If you still have lives left, respawn
-            StartCoroutine("RespawnCo");  // In the () is the string name of the Coroutine
-        }
-        else
-        {
-            // If you do not have anymore lives, save the scene for retry, then open up the gameover screen
-            //PlayerPrefs.SetInt("lastLevel", thisScene);
-            //thePlayer.gameObject.SetActive(false);  // Deactivate the player in the world
-            //Instantiate(deathSplosion, thePlayer.transform.position, thePlayer.transform.rotation);
-            //gameOverScreen.SetActive(true);
-            //levelMusic.Stop();
-            //gameOverMusic.Play();
-        }
+         StartCoroutine("RespawnCo");  
+
+        //else
+        //{
+        //    // If you do not have anymore lives, save the scene for retry, then open up the gameover screen
+        //    //PlayerPrefs.SetInt("lastLevel", thisScene);
+        //    //thePlayer.gameObject.SetActive(false);  // Deactivate the player in the world
+        //    //Instantiate(deathSplosion, thePlayer.transform.position, thePlayer.transform.rotation);
+        //    //gameOverScreen.SetActive(true);
+        //    //levelMusic.Stop();
+        //    //gameOverMusic.Play();
+        //}
     }
 
     public IEnumerator RespawnCo()
@@ -96,7 +86,7 @@ public class LevelManager : MonoBehaviour
 
         if (thePlayer.currentHealth <= 0)
         {
-            TakeLives(-1); //Take away 1 Life
+            //TakeLives(-1); //Take away 1 Life
             thePlayer.currentHealth = thePlayer.maxHealth; //Set health to max
         }
 
@@ -127,28 +117,28 @@ public class LevelManager : MonoBehaviour
         pointsText.text = "Pts: " + pointsCount;
     }
 
-    public void AddLives(int livesToGive)
-    {
-        lifeCount += livesToGive;
+    //public void AddLives(int livesToGive)
+    //{
+    //    lifeCount += livesToGive;
 
-        livesText.text = "Lives: " + lifeCount;
+    //    livesText.text = "Lives: " + lifeCount;
 
-        //coinSound.Play();
-    }
+    //    //coinSound.Play();
+    //}
 
-    public void TakeLives(int livesToTake)
-    {
-        lifeCount += livesToTake;
+    //public void TakeLives(int livesToTake)
+    //{
+    //    lifeCount += livesToTake;
 
-        livesText.text = "Lives: " + lifeCount;
+    //    livesText.text = "Lives: " + lifeCount;
 
-        if (lifeCount <= 0)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
+    //    if (lifeCount <= 0)
+    //    {
+    //        SceneManager.LoadScene("GameOver");
+    //    }
 
-        //coinSound.Play();
-    }
+    //    //coinSound.Play();
+    //}
 
     //public IEnumerator SetUpPlayer()
     //{
@@ -168,57 +158,6 @@ public class LevelManager : MonoBehaviour
 
     public void UpdateHeartMeter()
     {
-        switch (thePlayer.currentHealth)
-        {
-            //When healthCount = 600, full health
-            case 6:
-                heart1.sprite = heartFull;
-                heart2.sprite = heartFull;
-                heart3.sprite = heartFull;
-                break;
-
-            //Take away half of the heart when player gets hit once
-            case 5:
-                heart1.sprite = heartFull;
-                heart2.sprite = heartFull;
-                heart3.sprite = heartHalf;
-                break;
-
-            case 4:
-                heart1.sprite = heartFull;
-                heart2.sprite = heartFull;
-                heart3.sprite = heartEmpty;
-                break;
-
-            case 3:
-                heart1.sprite = heartFull;
-                heart2.sprite = heartHalf;
-                heart3.sprite = heartEmpty;
-                break;
-
-            case 2:
-                heart1.sprite = heartFull;
-                heart2.sprite = heartEmpty;
-                heart3.sprite = heartEmpty;
-                break;
-
-            case 1:
-                heart1.sprite = heartHalf;
-                heart2.sprite = heartEmpty;
-                heart3.sprite = heartEmpty;
-                break;
-
-            case 0:
-                heart1.sprite = heartEmpty;
-                heart2.sprite = heartEmpty;
-                heart3.sprite = heartEmpty;
-                break;
-
-            default:
-                heart1.sprite = heartEmpty;
-                heart2.sprite = heartEmpty;
-                heart3.sprite = heartEmpty;
-                break;
-        }
+        healthText.text = "" + thePlayer.currentHealth;
     }
 }
