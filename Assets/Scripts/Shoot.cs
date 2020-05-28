@@ -5,13 +5,13 @@ using UnityEngine;
 public class Shoot : StateMachineBehaviour
 {
 
-    PlayerController player;
+    TouchIntegratedPlayerControl player;
     RangedEnemy rangedEnemy;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<TouchIntegratedPlayerControl>();
         rangedEnemy = animator.GetComponent<RangedEnemy>();
     }
 

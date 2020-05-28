@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public float waitToRespawn;
-    public PlayerController thePlayer; // Makes reference to an object of PlayerController
+    public TouchIntegratedPlayerControl thePlayer; // Makes reference to an object of PlayerController
     public GameObject deathSplosion;
 
     public int pointsCount; // Keep track of number of coins that the player collected
@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        thePlayer = FindObjectOfType<PlayerController>();
+        thePlayer = FindObjectOfType<TouchIntegratedPlayerControl>();
 
         getScene = SceneManager.GetActiveScene();
 

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
-    PlayerController player;
+    TouchIntegratedPlayerControl player;
     LevelManager theManager;
     public int damageToGive;
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<TouchIntegratedPlayerControl>();
         theManager = FindObjectOfType<LevelManager>();
     }
 

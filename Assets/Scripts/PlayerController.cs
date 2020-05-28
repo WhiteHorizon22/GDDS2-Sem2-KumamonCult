@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         //If on Enemy
         onEnemy = Physics2D.OverlapCircle(groundcheck.position, groundcheckRadius, attackable);
 
-        UpdatePlayerStats();
+        //UpdatePlayerStats();
 
         if (isGrounded)
         {
@@ -118,7 +118,6 @@ public class PlayerController : MonoBehaviour
         }
         if (canMove)
         {
-            #if UNITY_EDITOR
             if (!dashing && !usingGroundPound && !knockedBack)
             {
                 //Manual Movement
@@ -202,7 +201,6 @@ public class PlayerController : MonoBehaviour
                     dashing = true;
                 }
             }
-            #endif
             else if (dashing & !knockedBack)
             {
                 if (currentDashDuration >= 0)
@@ -463,44 +461,44 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void UpdatePlayerStats()
-    {
-        if (rageMeter.mana.manaAmount > 20 && rageMeter.mana.manaAmount < 40)
-        {
-            standardAttackDamage = 2;
-            dashDamage = 2;
-            slamDamage = 2;
-            uppercutDamage = 2;
-        }
-        else if (rageMeter.mana.manaAmount > 40 && rageMeter.mana.manaAmount < 60)
-        {
-            standardAttackDamage = 3;
-            dashDamage = 3;
-            slamDamage = 3;
-            uppercutDamage = 3;
-        }
-        else if (rageMeter.mana.manaAmount > 60 && rageMeter.mana.manaAmount < 80)
-        {
-            standardAttackDamage = 4;
-            dashDamage = 4;
-            slamDamage = 4;
-            uppercutDamage = 4;
-        }
-        else if (rageMeter.mana.manaAmount > 80)
-        {
-            standardAttackDamage = 5;
-            dashDamage = 5;
-            slamDamage = 5;
-            uppercutDamage = 5;
-        }
-        else if (rageMeter.mana.manaAmount < 20)
-        {
-            standardAttackDamage = 1;
-            dashDamage = 1;
-            slamDamage = 1;
-            uppercutDamage = 1;
-        }
-    }
+    //public void UpdatePlayerStats()
+    //{
+    //    if (rageMeter.mana.manaAmount > 20 && rageMeter.mana.manaAmount < 40)
+    //    {
+    //        standardAttackDamage = 2;
+    //        dashDamage = 2;
+    //        slamDamage = 2;
+    //        uppercutDamage = 2;
+    //    }
+    //    else if (rageMeter.mana.manaAmount > 40 && rageMeter.mana.manaAmount < 60)
+    //    {
+    //        standardAttackDamage = 3;
+    //        dashDamage = 3;
+    //        slamDamage = 3;
+    //        uppercutDamage = 3;
+    //    }
+    //    else if (rageMeter.mana.manaAmount > 60 && rageMeter.mana.manaAmount < 80)
+    //    {
+    //        standardAttackDamage = 4;
+    //        dashDamage = 4;
+    //        slamDamage = 4;
+    //        uppercutDamage = 4;
+    //    }
+    //    else if (rageMeter.mana.manaAmount > 80)
+    //    {
+    //        standardAttackDamage = 5;
+    //        dashDamage = 5;
+    //        slamDamage = 5;
+    //        uppercutDamage = 5;
+    //    }
+    //    else if (rageMeter.mana.manaAmount < 20)
+    //    {
+    //        standardAttackDamage = 1;
+    //        dashDamage = 1;
+    //        slamDamage = 1;
+    //        uppercutDamage = 1;
+    //    }
+    //}
 
     private void OnDrawGizmosSelected()
     {

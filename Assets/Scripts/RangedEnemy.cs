@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
-    PlayerController player;
+    TouchIntegratedPlayerControl player;
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer sr;
@@ -50,7 +50,7 @@ public class RangedEnemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         currentHealth = maxHealth;
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<TouchIntegratedPlayerControl>();
         rb = GetComponent<Rigidbody2D>();
         rageMeter = FindObjectOfType<StaminaBar>();
         theManager = FindObjectOfType<LevelManager>();

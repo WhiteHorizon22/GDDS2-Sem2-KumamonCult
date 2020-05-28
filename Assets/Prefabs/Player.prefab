@@ -184,7 +184,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813602915}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -297,9 +297,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1233166332}
   - component: {fileID: 4559861171193539003}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GroundPoundCheck
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 4120582433709229820}
   m_Layer: 10
   m_Name: StandardBodyCollision
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -755,9 +755,10 @@ GameObject:
   - component: {fileID: 8706028202019520147}
   - component: {fileID: 8706028202019520144}
   - component: {fileID: 8706028202019520145}
-  - component: {fileID: 1535175780990763636}
   - component: {fileID: 8706028202019520146}
   - component: {fileID: 1769474107353687361}
+  - component: {fileID: 7790050236607983680}
+  - component: {fileID: 5522565351788263103}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -853,66 +854,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1535175780990763636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8706028202019520140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ed65d8ac006b2549bb294b50a739e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  respawnPosition: {x: 0, y: 0, z: 0}
-  originalSpawn: {x: 0, y: 0, z: 0}
-  maxHealth: 6
-  currentHealth: 6
-  isMoving: 0
-  moveSpeed: 9
-  jumpHeight: 11
-  doubleJumpUsed: 0
-  canMove: 0
-  groundcheck: {fileID: 8706028200275015906}
-  groundcheckRadius: 0.7
-  ground:
-    serializedVersion: 2
-    m_Bits: 256
-  isGrounded: 1
-  knockedBack: 1
-  knockbackDuration: 1
-  knockbackStrength: 30
-  originKnockbackDuration: 1
-  attackRange: {fileID: 1458521918}
-  attackRangeRadius: 1.5
-  attackable:
-    serializedVersion: 2
-    m_Bits: 1024
-  attackRate: 2.5
-  standardAttackDamage: 1
-  uppercutDamage: 1
-  dashDamage: 1
-  slamDamage: 1
-  standardAttackBoost: 0
-  standardAttackKnockback: 75
-  uppercutAirBoost: 500
-  uppercutKnockback: 500
-  poundDownForce: 50
-  poundDownKnockback: 400
-  slamKnockback: 500
-  usingGroundPound: 0
-  groundPoundCheck: {fileID: 1233166332}
-  onEnemy: 0
-  dashSpeed: 50
-  currentDashDuration: 0
-  dashDuration: 0.1
-  dashing: 0
-  normalBodyCollision: {fileID: 5689365967994044621}
-  dash: {fileID: 1537237098}
-  slam: {fileID: 813602917}
-  uppercut: {fileID: 580131370}
 --- !u!95 &8706028202019520146
 Animator:
   serializedVersion: 3
@@ -958,3 +899,127 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0859318, y: 2.654622}
   m_EdgeRadius: 0
+--- !u!114 &7790050236607983680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706028202019520140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bb90bf00b773a4fb2177791ebde384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  respawnPosition: {x: 0, y: 0, z: 0}
+  originalSpawn: {x: 0, y: 0, z: 0}
+  maxHealth: 6
+  currentHealth: 6
+  groundcheck: {fileID: 8706028200275015906}
+  groundcheckRadius: 0.5
+  ground:
+    serializedVersion: 2
+    m_Bits: 256
+  isGrounded: 0
+  isMoving: 0
+  moveSpeed: 7
+  jumpHeight: 12
+  doubleJumpUsed: 0
+  canMove: 0
+  dashSpeed: 50
+  currentDashDuration: 0
+  dashDuration: 0.2
+  dashing: 0
+  attackRange: {fileID: 1458521918}
+  attackRangeRadius: 1.5
+  attackable:
+    serializedVersion: 2
+    m_Bits: 1024
+  attackRate: 0.5
+  nextAttackTime: 0
+  standardAttackDamage: 1
+  uppercutDamage: 1
+  dashDamage: 1
+  slamDamage: 1
+  standardAttackBoost: 100
+  standardAttackKnockback: 100
+  uppercutKnockback: 10
+  poundDownForce: 50
+  poundDownKnockback: 200
+  slamKnockback: 200
+  usingGroundPound: 0
+  groundPoundCheck: {fileID: 1233166332}
+  onEnemy: 0
+  knockedBack: 0
+  knockbackDuration: 0
+  knockbackStrength: 50
+  originKnockbackDuration: 0.2
+  normalBodyCollision: {fileID: 5689365967994044621}
+  dash: {fileID: 1537237098}
+  slam: {fileID: 813602917}
+  uppercut: {fileID: 580131370}
+  maxSwipetime: 0.5
+  minSwipeDistance: 50
+--- !u!114 &5522565351788263103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706028202019520140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bb90bf00b773a4fb2177791ebde384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  respawnPosition: {x: 0, y: 0, z: 0}
+  originalSpawn: {x: 0, y: 0, z: 0}
+  maxHealth: 0
+  currentHealth: 0
+  groundcheck: {fileID: 0}
+  groundcheckRadius: 0
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
+  isGrounded: 0
+  isMoving: 0
+  moveSpeed: 0
+  jumpHeight: 0
+  doubleJumpUsed: 0
+  canMove: 0
+  dashSpeed: 0
+  currentDashDuration: 0
+  dashDuration: 0
+  dashing: 0
+  attackRange: {fileID: 0}
+  attackRangeRadius: 0
+  attackable:
+    serializedVersion: 2
+    m_Bits: 0
+  attackRate: 0
+  nextAttackTime: 0
+  standardAttackDamage: 0
+  uppercutDamage: 0
+  dashDamage: 0
+  slamDamage: 0
+  standardAttackBoost: 0
+  standardAttackKnockback: 0
+  uppercutKnockback: 0
+  poundDownForce: 0
+  poundDownKnockback: 0
+  slamKnockback: 0
+  usingGroundPound: 0
+  groundPoundCheck: {fileID: 0}
+  onEnemy: 0
+  knockedBack: 0
+  knockbackDuration: 0
+  knockbackStrength: 0
+  originKnockbackDuration: 0
+  normalBodyCollision: {fileID: 0}
+  dash: {fileID: 0}
+  slam: {fileID: 0}
+  uppercut: {fileID: 0}
+  maxSwipetime: 0
+  minSwipeDistance: 0

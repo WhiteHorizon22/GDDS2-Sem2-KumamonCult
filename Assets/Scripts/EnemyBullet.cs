@@ -8,7 +8,7 @@ public class EnemyBullet : MonoBehaviour
     Rigidbody2D rb; // Reference to Rigid 2D component in Bullet prefab
 
     public int damageToGive;
-    PlayerController player;
+    TouchIntegratedPlayerControl player;
     public float bulletForce;
 
     public bool deflected;
@@ -18,7 +18,7 @@ public class EnemyBullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<TouchIntegratedPlayerControl>();
 
         deflected = false;
 

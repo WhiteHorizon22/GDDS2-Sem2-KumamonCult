@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    PlayerController player;
+    TouchIntegratedPlayerControl player;
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer sr;
@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         currentHealth = maxHealth;
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<TouchIntegratedPlayerControl>();
         rb = GetComponent<Rigidbody2D>();
         rageMeter = FindObjectOfType<StaminaBar>();
         theManager = FindObjectOfType<LevelManager>();

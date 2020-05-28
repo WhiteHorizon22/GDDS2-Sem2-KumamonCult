@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BreakableObject : MonoBehaviour
 {
-    PlayerController player;
+    TouchIntegratedPlayerControl player;
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer sr;
@@ -20,7 +20,7 @@ public class BreakableObject : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         currentHealth = maxHealth;
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<TouchIntegratedPlayerControl>();
         rb = GetComponent<Rigidbody2D>();
         theManager = FindObjectOfType<LevelManager>();
     }
