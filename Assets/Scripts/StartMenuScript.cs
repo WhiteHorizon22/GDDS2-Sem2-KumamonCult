@@ -24,6 +24,12 @@ public class StartMenuScript : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    //OpenUpTutorialLevel
+    public void TutorialLevel()
+    {
+        SceneManager.LoadScene("TutorialLevel");
+    }
+
     //Quit Game
     public void QuitGame()
     {

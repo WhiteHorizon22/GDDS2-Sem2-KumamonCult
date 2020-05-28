@@ -129,6 +129,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,11 +189,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!4 &24274684 stripped
@@ -213,6 +213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -269,11 +274,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!4 &70951405 stripped
@@ -292,7 +292,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (12)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -368,6 +368,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -421,11 +426,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -509,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (27)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -585,6 +585,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -638,11 +643,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -731,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (51)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -800,7 +800,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (2)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -869,7 +869,7 @@ PrefabInstance:
     - target: {fileID: 4280246702617270099, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
       propertyPath: m_Name
-      value: BigBoi Variant (3)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4280246702617270103, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
@@ -938,7 +938,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (31)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -1081,7 +1081,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (18)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -1150,7 +1150,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (6)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -1232,6 +1232,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1285,11 +1290,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1379,7 +1379,7 @@ PrefabInstance:
     - target: {fileID: 4280246702617270099, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
       propertyPath: m_Name
-      value: BigBoi Variant (2)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4280246702617270103, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
@@ -1448,7 +1448,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (30)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -1591,7 +1591,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (28)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -1660,7 +1660,7 @@ PrefabInstance:
     - target: {fileID: 4280246702617270099, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
       propertyPath: m_Name
-      value: BigBoi Variant (1)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4280246702617270103, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
@@ -1729,7 +1729,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (20)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -1872,7 +1872,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (57)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -1944,11 +1944,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawner Variant (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562958, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2003,6 +1998,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawner Variant (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562997, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
@@ -2107,6 +2107,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2162,11 +2167,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!114 &268561647 stripped
@@ -2191,7 +2191,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (55)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -2260,7 +2260,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (56)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -2329,7 +2329,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (4)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -2398,7 +2398,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (12)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -2467,7 +2467,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (52)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -2533,16 +2533,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
-        type: 3}
-      propertyPath: m_Name
-      value: 3x1Platform (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
     - target: {fileID: 2573832279658539484, guid: b2ff58c5e4d86604588ff71a994c170e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2598,6 +2588,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
+        type: 3}
+      propertyPath: m_Name
+      value: 3x1Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2ff58c5e4d86604588ff71a994c170e, type: 3}
 --- !u!1001 &315476772
@@ -2610,7 +2610,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (9)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -2679,7 +2679,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (48)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -2755,6 +2755,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2810,11 +2815,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!4 &345329044 stripped
@@ -2833,7 +2833,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (13)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -2899,11 +2899,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawner Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562958, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2959,6 +2954,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawner Variant
+      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562997, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: maxHealth
@@ -2987,6 +2987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -3041,11 +3046,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3129,7 +3129,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (24)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -3205,6 +3205,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3260,11 +3265,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &421594980
@@ -3283,6 +3283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -3337,11 +3342,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3461,7 +3461,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (22)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -3537,6 +3537,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3592,11 +3597,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &438348498
@@ -3606,16 +3606,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
-        type: 3}
-      propertyPath: m_Name
-      value: 3x1Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
     - target: {fileID: 2573832279658539484, guid: b2ff58c5e4d86604588ff71a994c170e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3671,6 +3661,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
+        type: 3}
+      propertyPath: m_Name
+      value: 3x1Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2ff58c5e4d86604588ff71a994c170e, type: 3}
 --- !u!1001 &439587858
@@ -3683,7 +3683,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (41)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -3752,7 +3752,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (33)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -3821,7 +3821,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (36)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -3902,7 +3902,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (5)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -3971,7 +3971,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (1)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -4053,6 +4053,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4108,11 +4113,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &601507700
@@ -4125,7 +4125,7 @@ PrefabInstance:
     - target: {fileID: 4280246702617270099, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
       propertyPath: m_Name
-      value: Melee Tank
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4280246702617270103, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
@@ -4385,6 +4385,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4440,11 +4445,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!4 &694089567 stripped
@@ -4476,6 +4476,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4529,11 +4534,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4561,6 +4561,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4616,11 +4621,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &779049533
@@ -4633,7 +4633,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (29)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -4721,6 +4721,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4776,11 +4781,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!4 &789909709 stripped
@@ -4796,11 +4796,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7011091265397998771, guid: ff51ae1ced7d2f649abc2639412c4c1a,
-        type: 3}
-      propertyPath: m_Name
-      value: Checkpoint (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 7011091265397998768, guid: ff51ae1ced7d2f649abc2639412c4c1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4861,6 +4856,11 @@ PrefabInstance:
       propertyPath: shopMenu
       value: 
       objectReference: {fileID: 268561647}
+    - target: {fileID: 7011091265397998771, guid: ff51ae1ced7d2f649abc2639412c4c1a,
+        type: 3}
+      propertyPath: m_Name
+      value: Checkpoint (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff51ae1ced7d2f649abc2639412c4c1a, type: 3}
 --- !u!4 &816115010 stripped
@@ -4953,7 +4953,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (50)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -5022,7 +5022,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (49)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -5091,7 +5091,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (9)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -5167,6 +5167,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5222,11 +5227,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &894723257
@@ -5245,6 +5245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -5301,11 +5306,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &899014118
@@ -5318,7 +5318,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (43)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -5394,6 +5394,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5447,11 +5452,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5558,6 +5558,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5613,11 +5618,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &962852739
@@ -5636,6 +5636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -5692,11 +5697,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &982961252
@@ -5709,7 +5709,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (15)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -5778,7 +5778,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (7)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -5844,11 +5844,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7011091265397998771, guid: ff51ae1ced7d2f649abc2639412c4c1a,
-        type: 3}
-      propertyPath: m_Name
-      value: Checkpoint (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 7011091265397998768, guid: ff51ae1ced7d2f649abc2639412c4c1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5909,6 +5904,11 @@ PrefabInstance:
       propertyPath: shopMenu
       value: 
       objectReference: {fileID: 268561647}
+    - target: {fileID: 7011091265397998771, guid: ff51ae1ced7d2f649abc2639412c4c1a,
+        type: 3}
+      propertyPath: m_Name
+      value: Checkpoint (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff51ae1ced7d2f649abc2639412c4c1a, type: 3}
 --- !u!1001 &993102093
@@ -5921,7 +5921,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (44)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -5997,6 +5997,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6050,11 +6055,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6138,7 +6138,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (42)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -6289,6 +6289,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6344,11 +6349,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1053712101
@@ -6361,7 +6361,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (11)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -6427,11 +6427,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawner Variant (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562958, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6487,6 +6482,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawner Variant (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562997, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: maxHealth
@@ -6515,7 +6515,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (19)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -6584,7 +6584,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (4)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -6727,7 +6727,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (16)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -6808,7 +6808,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (6)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -6913,16 +6913,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
-        type: 3}
-      propertyPath: m_Name
-      value: 3x1Platform (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
     - target: {fileID: 2573832279658539484, guid: b2ff58c5e4d86604588ff71a994c170e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6978,6 +6968,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
+        type: 3}
+      propertyPath: m_Name
+      value: 3x1Platform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172076482900158287, guid: b2ff58c5e4d86604588ff71a994c170e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2ff58c5e4d86604588ff71a994c170e, type: 3}
 --- !u!4 &1174009106 stripped
@@ -7005,11 +7005,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawner Variant (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562958, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7065,6 +7060,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawner Variant (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562997, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: maxHealth
@@ -7093,6 +7093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -7149,11 +7154,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1212275478
@@ -7172,6 +7172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -7228,11 +7233,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1220918483
@@ -7245,7 +7245,7 @@ PrefabInstance:
     - target: {fileID: 4280246702617270099, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
       propertyPath: m_Name
-      value: Melee Tank
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4280246702617270103, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
@@ -7314,7 +7314,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (61)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -7452,7 +7452,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (7)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -7527,7 +7527,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (59)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -7670,7 +7670,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (17)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -7739,7 +7739,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (35)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -7808,7 +7808,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (37)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -7874,11 +7874,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawner Variant (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562958, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7934,6 +7929,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawner Variant (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562997, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: maxHealth
@@ -7962,6 +7962,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -8018,11 +8023,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1284151244
@@ -8035,7 +8035,7 @@ PrefabInstance:
     - target: {fileID: 4280246702617270099, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
       propertyPath: m_Name
-      value: BigBoi Variant
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4280246702617270103, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
@@ -8111,6 +8111,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8166,11 +8171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1320983832
@@ -8183,7 +8183,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (39)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -8316,6 +8316,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8371,11 +8376,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1332365319
@@ -8388,7 +8388,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (10)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -8625,6 +8625,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8680,11 +8685,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1375589081
@@ -8697,7 +8697,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (8)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -8779,6 +8779,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8834,11 +8839,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1408207821
@@ -8851,7 +8851,7 @@ PrefabInstance:
     - target: {fileID: 4280246702617270099, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
       propertyPath: m_Name
-      value: Melee Tank
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4280246702617270103, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
@@ -8926,7 +8926,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (8)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -8995,7 +8995,7 @@ PrefabInstance:
     - target: {fileID: 4280246702617270099, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
       propertyPath: m_Name
-      value: Melee Tank
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4280246702617270103, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
@@ -9077,6 +9077,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9132,11 +9137,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1462905778
@@ -9149,7 +9149,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (46)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -9237,6 +9237,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9292,11 +9297,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1500760221
@@ -9309,7 +9309,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (40)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -9385,6 +9385,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9440,11 +9445,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1508942323
@@ -9454,11 +9454,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawner Variant (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562958, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9514,6 +9509,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawner Variant (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d95aadf604ff34a865dad717719af9, type: 3}
 --- !u!1001 &1511392502
@@ -9532,6 +9532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -9586,11 +9591,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9692,7 +9692,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (5)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -9767,7 +9767,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (60)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -9836,7 +9836,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (14)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -9905,7 +9905,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (11)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -9974,7 +9974,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (54)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -10050,6 +10050,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10105,11 +10110,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1612784908
@@ -10128,6 +10128,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -10184,11 +10189,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1618457840
@@ -10198,11 +10198,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7011091265397998771, guid: ff51ae1ced7d2f649abc2639412c4c1a,
-        type: 3}
-      propertyPath: m_Name
-      value: Checkpoint
-      objectReference: {fileID: 0}
     - target: {fileID: 7011091265397998768, guid: ff51ae1ced7d2f649abc2639412c4c1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10263,6 +10258,11 @@ PrefabInstance:
       propertyPath: shopMenu
       value: 
       objectReference: {fileID: 268561647}
+    - target: {fileID: 7011091265397998771, guid: ff51ae1ced7d2f649abc2639412c4c1a,
+        type: 3}
+      propertyPath: m_Name
+      value: Checkpoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff51ae1ced7d2f649abc2639412c4c1a, type: 3}
 --- !u!4 &1620941638 stripped
@@ -10315,7 +10315,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (45)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -10391,6 +10391,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10446,11 +10451,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1639824026
@@ -10463,7 +10463,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (38)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -10532,7 +10532,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (23)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -10688,6 +10688,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10743,11 +10748,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1681478552
@@ -10760,7 +10760,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (3)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -10836,6 +10836,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10891,11 +10896,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!4 &1702694453 stripped
@@ -10911,11 +10911,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7011091265397998771, guid: ff51ae1ced7d2f649abc2639412c4c1a,
-        type: 3}
-      propertyPath: m_Name
-      value: Checkpoint (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 7011091265397998768, guid: ff51ae1ced7d2f649abc2639412c4c1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10976,6 +10971,11 @@ PrefabInstance:
       propertyPath: shopMenu
       value: 
       objectReference: {fileID: 268561647}
+    - target: {fileID: 7011091265397998771, guid: ff51ae1ced7d2f649abc2639412c4c1a,
+        type: 3}
+      propertyPath: m_Name
+      value: Checkpoint (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff51ae1ced7d2f649abc2639412c4c1a, type: 3}
 --- !u!1001 &1718194889
@@ -10994,6 +10994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -11050,11 +11055,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1732317344
@@ -11067,7 +11067,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (53)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -11217,6 +11217,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11270,11 +11275,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11580,7 +11580,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (34)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -11661,7 +11661,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (62)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -11737,6 +11737,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11792,11 +11797,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!4 &1913574222 stripped
@@ -11815,7 +11815,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (26)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -11891,6 +11891,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11946,11 +11951,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &1983951613
@@ -11963,7 +11963,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (1)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -12038,7 +12038,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (2)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -12107,7 +12107,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (25)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -12176,7 +12176,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (58)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -12319,7 +12319,7 @@ PrefabInstance:
     - target: {fileID: 4280246702617270099, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
       propertyPath: m_Name
-      value: Melee Tank
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4280246702617270103, guid: 0fc21535242639f47b0060bfaeeedef3,
         type: 3}
@@ -12388,7 +12388,7 @@ PrefabInstance:
     - target: {fileID: 516582160767035866, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
       propertyPath: m_Name
-      value: Ranged (3)
+      value: Ranged
       objectReference: {fileID: 0}
     - target: {fileID: 516582160767035872, guid: 5f4de94a67981ad4aaa0fedbf2041b10,
         type: 3}
@@ -12464,6 +12464,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12517,11 +12522,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12543,6 +12543,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12598,11 +12603,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &2068724847
@@ -12621,6 +12621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
@@ -12675,11 +12680,6 @@ PrefabInstance:
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12775,6 +12775,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12830,11 +12835,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!4 &2106732790 stripped
@@ -12853,7 +12853,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (47)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -12929,6 +12929,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690631043366513778, guid: deff03318a87a9840b28956b86d116dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12984,11 +12989,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4675984943936174018, guid: deff03318a87a9840b28956b86d116dd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deff03318a87a9840b28956b86d116dd, type: 3}
 --- !u!1001 &2133345495
@@ -13001,7 +13001,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (32)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -13070,7 +13070,7 @@ PrefabInstance:
     - target: {fileID: 4989284579186292394, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
       propertyPath: m_Name
-      value: Melee (21)
+      value: Melee
       objectReference: {fileID: 0}
     - target: {fileID: 4989284579186292398, guid: 1cbdf9cbe63371f4693a3fdb935b0354,
         type: 3}
@@ -13136,11 +13136,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2473094130327860658, guid: c34003361e11e6743b774923977884de,
-        type: 3}
-      propertyPath: m_Name
-      value: Level Essentials
+    - target: {fileID: 1444993323, guid: c34003361e11e6743b774923977884de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Jump
       objectReference: {fileID: 0}
+    - target: {fileID: 885514142180331165, guid: c34003361e11e6743b774923977884de,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803674431003295058, guid: c34003361e11e6743b774923977884de,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1511494246}
     - target: {fileID: 1831780919352642195, guid: c34003361e11e6743b774923977884de,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13149,7 +13158,7 @@ PrefabInstance:
     - target: {fileID: 1831780919352642195, guid: c34003361e11e6743b774923977884de,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3832896
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 1831780919352642195, guid: c34003361e11e6743b774923977884de,
         type: 3}
@@ -13196,16 +13205,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 885514142180331165, guid: c34003361e11e6743b774923977884de,
+    - target: {fileID: 2473094130327860658, guid: c34003361e11e6743b774923977884de,
         type: 3}
-      propertyPath: m_LocalPosition.z
+      propertyPath: m_Name
+      value: Level Essentials
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940657259775807334, guid: c34003361e11e6743b774923977884de,
+        type: 3}
+      propertyPath: standardAttackBoost
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1803674431003295058, guid: c34003361e11e6743b774923977884de,
+    - target: {fileID: 6940657259775807334, guid: c34003361e11e6743b774923977884de,
         type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1511494246}
+      propertyPath: dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34003361e11e6743b774923977884de, type: 3}
 --- !u!1001 &2082300907812175941
@@ -13215,11 +13229,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2082300907855122359, guid: 17cec5fd8b50a1a43aaf15a91ebdfc4a,
-        type: 3}
-      propertyPath: m_Name
-      value: Chest
-      objectReference: {fileID: 0}
     - target: {fileID: 2082300907855122354, guid: 17cec5fd8b50a1a43aaf15a91ebdfc4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13280,6 +13289,11 @@ PrefabInstance:
       propertyPath: chestOpen
       value: 
       objectReference: {fileID: 950277926}
+    - target: {fileID: 2082300907855122359, guid: 17cec5fd8b50a1a43aaf15a91ebdfc4a,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17cec5fd8b50a1a43aaf15a91ebdfc4a, type: 3}
 --- !u!1001 &7307389068864840665
@@ -13293,6 +13307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Breakable Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307389068813260132, guid: 196f489967e902b45bde0b48b8cff783,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7307389068813260134, guid: 196f489967e902b45bde0b48b8cff783,
         type: 3}
@@ -13349,11 +13368,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7307389068813260132, guid: 196f489967e902b45bde0b48b8cff783,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 196f489967e902b45bde0b48b8cff783, type: 3}
 --- !u!1001 &8388423786199183404
@@ -13363,11 +13377,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
-        type: 3}
-      propertyPath: m_Name
-      value: Ranged King
-      objectReference: {fileID: 0}
     - target: {fileID: 8305462628261562958, guid: e5d95aadf604ff34a865dad717719af9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13422,6 +13431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8305462628261562996, guid: e5d95aadf604ff34a865dad717719af9,
+        type: 3}
+      propertyPath: m_Name
+      value: Ranged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d95aadf604ff34a865dad717719af9, type: 3}

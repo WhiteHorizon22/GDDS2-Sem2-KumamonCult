@@ -45,20 +45,4 @@ public class PauseScreen : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         theManager = FindObjectOfType<LevelManager>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GamePaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
-        }
-    }
 }
