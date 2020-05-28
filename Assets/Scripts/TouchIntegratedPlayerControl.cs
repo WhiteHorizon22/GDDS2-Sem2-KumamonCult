@@ -79,7 +79,9 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
 
     //Screen Functions
     private float screenWidth;
+    private float screenHeight;
     private float movementZone;
+    private float jumpZone;
 
     [Header("Swipe Controls")]
     public float maxSwipetime;
@@ -97,7 +99,10 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
     void Start()
     {
         screenWidth = Screen.width;
+        screenHeight = Screen.height;
         movementZone = screenWidth / 4;
+        jumpZone = screenHeight / 3;
+
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         theManager = FindObjectOfType<LevelManager>();
@@ -228,12 +233,29 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                 }
 
                 //Attacking
-                if (touch.position.x > movementZone)
+                if (touch.position.x > movementZone && touch.position.y > jumpZone)
                 {
                     if (Time.time >= nextAttackTime)
                     {
                         Attack();
                         nextAttackTime = Time.time + 1f / attackRate;
+                    }
+                }
+
+                if (touch.position.x > movementZone && touch.position.y < jumpZone)
+                {
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        if (isGrounded)
+                        {
+                            doubleJumpUsed = false;
+                            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                        }
+                        else if (!isGrounded && !doubleJumpUsed)
+                        {
+                            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                            doubleJumpUsed = true;
+                        }
                     }
                 }
 
