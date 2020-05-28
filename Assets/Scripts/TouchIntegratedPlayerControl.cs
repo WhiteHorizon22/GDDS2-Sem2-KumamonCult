@@ -247,15 +247,15 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                     if (touch.phase == TouchPhase.Began)
                     {
                         if (isGrounded)
-                        {
-                            doubleJumpUsed = false;
-                            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-                        }
-                        else if (!isGrounded && !doubleJumpUsed)
-                        {
-                            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-                            doubleJumpUsed = true;
-                        }
+                    {
+                        doubleJumpUsed = false;
+                        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                    }
+                    else if (!isGrounded && !doubleJumpUsed)
+                    {
+                        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                        doubleJumpUsed = true;
+                    }
                     }
                 }
 
@@ -371,11 +371,11 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * standardAttackKnockback);
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackBoost);
             }
-            if (enemy.name.Contains("Melee"))
+            if (enemy.tag == "Melee")
             {
                 enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
             }
-            else if (enemy.name.Contains("Ranged"))
+            else if (enemy.tag == "Ranged")
             {
                 enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
             }
@@ -397,12 +397,12 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
         //Apply Damage to Detected Enemies
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.name.Contains("Melee"))
+            if (enemy.tag == "Melee")
             {
                 enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(0, uppercutKnockback);
                 enemy.GetComponent<EnemyController>().TakeDamage(uppercutDamage);
             }
-            else if (enemy.name.Contains("Ranged"))
+            else if (enemy.tag == "Ranged")
             {
                 enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(0, uppercutKnockback);
                 enemy.GetComponent<RangedEnemy>().TakeDamage(uppercutDamage);
@@ -438,11 +438,11 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                 {
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * slamKnockback);
                 }
-                if (enemy.name.Contains("Melee"))
+                if (enemy.tag == "Melee")
                 {
                     enemy.GetComponent<EnemyController>().TakeDamage(slamDamage);
                 }
-                else if (enemy.name.Contains("Ranged"))
+                else if (enemy.tag == "Ranged")
                 {
                     enemy.GetComponent<RangedEnemy>().TakeDamage(slamDamage);
                 }
@@ -484,7 +484,7 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
     {
         if (usingGroundPound)
         {
-            if (other.tag == "Enemy")
+            if (other.tag == "Melee" || other.tag == "Ranged")
             {
                 if (other.transform.position.x > transform.position.x)
                 {
