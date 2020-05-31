@@ -232,16 +232,6 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                     rb.velocity = new Vector2(0, rb.velocity.y);
                 }
 
-                //Attacking
-                if (touch.position.x > movementZone && touch.position.y > jumpZone)
-                {
-                    if (Time.time >= nextAttackTime)
-                    {
-                        Attack();
-                        nextAttackTime = Time.time + 1f / attackRate;
-                    }
-                }
-
                 if (touch.position.x > movementZone && touch.position.y < jumpZone)
                 {
                     if (touch.phase == TouchPhase.Began)
@@ -260,7 +250,7 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                 }
 
                 //Swipping
-                if (touch.position.x > movementZone)
+                if (touch.position.x > movementZone && touch.position.y > jumpZone)
                 {
                     if (touch.phase == TouchPhase.Began)
                     {
@@ -277,6 +267,14 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                         if (swipeTime < maxSwipetime && swipeLength > minSwipeDistance)
                         {
                             SwipeControl();
+                        }
+                    }
+                    else //Attack
+                    {
+                        if (Time.time >= nextAttackTime)
+                        {
+                            Attack();
+                            nextAttackTime = Time.time + 1f / attackRate;
                         }
                     }
                 }
@@ -371,13 +369,9 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * standardAttackKnockback);
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackBoost);
             }
-            if (enemy.tag == "Melee")
+            if (enemy.tag == "Enemy")
             {
                 enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
-            }
-            else if (enemy.tag == "Ranged")
-            {
-                enemy.GetComponent<RangedEnemy>().TakeDamage(standardAttackDamage);
             }
             else if (enemy.tag == "Destructibles")
             {
@@ -397,15 +391,10 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
         //Apply Damage to Detected Enemies
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.tag == "Melee")
+            if (enemy.tag == "Enemy")
             {
                 enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(0, uppercutKnockback);
                 enemy.GetComponent<EnemyController>().TakeDamage(uppercutDamage);
-            }
-            else if (enemy.tag == "Ranged")
-            {
-                enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(0, uppercutKnockback);
-                enemy.GetComponent<RangedEnemy>().TakeDamage(uppercutDamage);
             }
             else if (enemy.name.Contains("EnemyFireball"))
             {
@@ -438,14 +427,12 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                 {
                     enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * slamKnockback);
                 }
-                if (enemy.tag == "Melee")
-                {
-                    enemy.GetComponent<EnemyController>().TakeDamage(slamDamage);
-                }
-                else if (enemy.tag == "Ranged")
-                {
-                    enemy.GetComponent<RangedEnemy>().TakeDamage(slamDamage);
-                }
+
+            if (enemy.tag == "Enemy")
+            {
+                enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(slamKnockback, 0);
+                enemy.GetComponent<EnemyController>().TakeDamage(slamDamage);
+            }
             }
         }
     }
@@ -484,7 +471,7 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
     {
         if (usingGroundPound)
         {
-            if (other.tag == "Melee" || other.tag == "Ranged")
+            if (other.tag == "Enemy")
             {
                 if (other.transform.position.x > transform.position.x)
                 {

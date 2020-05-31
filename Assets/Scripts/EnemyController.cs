@@ -44,6 +44,7 @@ public class EnemyController : MonoBehaviour
     public bool stunned;
     public float stunTime;
     public float speed;
+    public bool canMove;
     public GameObject deathEffect;
 
     public GameObject attackEffect;
@@ -82,7 +83,10 @@ public class EnemyController : MonoBehaviour
             {
                 if (Time.time >= nextAttackTime && isGrounded)
                 {
-                    anim.SetBool("chase", false);
+                    if (tag.Contains("Melee"))
+                    {
+                        anim.SetBool("chase", false);
+                    }
                     anim.SetTrigger("attack");
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
@@ -91,32 +95,44 @@ public class EnemyController : MonoBehaviour
             {
                 if (isGrounded)
                 {
-                    if (!stunned && !canMoveAhead)
+                    if (tag.Contains("Ranged"))
                     {
-                        rb.velocity = Vector2.zero;
-                        anim.SetBool("chase", false);
-                        if (!canMoveAhead & (player.transform.position.x > front.transform.position.x))
+                        if (Time.time >= nextAttackTime && isGrounded && !stunned)
                         {
-                            transform.localScale = new Vector3(enemySize, enemySize, transform.localScale.z);
-                        }
-                        else if (player.transform.position.x < front.transform.position.x)
-                        {
-                            transform.localScale = new Vector3(-enemySize, enemySize, transform.localScale.z);
+                            anim.SetTrigger("Attack");
+                            nextAttackTime = Time.time + 1f / attackRate;
                         }
                     }
-                    else
+                       
+                    else if (tag.Contains("Melee"))
                     {
-                        if (player.transform.position.x > front.transform.position.x)
+                        if (!stunned && !canMoveAhead)
                         {
-                            transform.localScale = new Vector3(enemySize, enemySize, transform.localScale.z);
-                            anim.SetBool("chase", true);
-                            rb.velocity = new Vector2(speed, rb.velocity.y);
+                            rb.velocity = Vector2.zero;
+                            anim.SetBool("chase", false);
+                            if (!canMoveAhead & (player.transform.position.x > front.transform.position.x))
+                            {
+                                transform.localScale = new Vector3(enemySize, enemySize, transform.localScale.z);
+                            }
+                            else if (player.transform.position.x < front.transform.position.x)
+                            {
+                                transform.localScale = new Vector3(-enemySize, enemySize, transform.localScale.z);
+                            }
                         }
-                        else if (player.transform.position.x < front.transform.position.x)
+                        else
                         {
-                            transform.localScale = new Vector3(-enemySize, enemySize, transform.localScale.z);
-                            anim.SetBool("chase", true);
-                            rb.velocity = new Vector2(-speed, rb.velocity.y);
+                            if (player.transform.position.x > front.transform.position.x)
+                            {
+                                transform.localScale = new Vector3(enemySize, enemySize, transform.localScale.z);
+                                anim.SetBool("chase", true);
+                                rb.velocity = new Vector2(speed, rb.velocity.y);
+                            }
+                            else if (player.transform.position.x < front.transform.position.x)
+                            {
+                                transform.localScale = new Vector3(-enemySize, enemySize, transform.localScale.z);
+                                anim.SetBool("chase", true);
+                                rb.velocity = new Vector2(-speed, rb.velocity.y);
+                            }
                         }
                     }
                 }
@@ -127,8 +143,11 @@ public class EnemyController : MonoBehaviour
         {
             if (stunTime > 0)
             {
-                anim.SetBool("chase", false);
                 stunTime -= Time.deltaTime;
+                if (tag.Contains("Melee"))
+                {
+                    anim.SetBool("chase", false);
+                }
             }
             else
             {
