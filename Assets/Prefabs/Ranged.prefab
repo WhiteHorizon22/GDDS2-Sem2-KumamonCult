@@ -225,7 +225,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   playerInRange: 0
-  attackRate: 3
+  attackRate: 5
   ammo: {fileID: 1096994515819539398, guid: fa280555378cfd246b70028b7cec542d, type: 3}
   sight: {fileID: 516582159235563934}
   sightDistance: 20

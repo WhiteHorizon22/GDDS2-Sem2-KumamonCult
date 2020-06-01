@@ -269,8 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d486fdd6521e241b8824aa6c1c7a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 10
+  maxHealth: 5
+  currentHealth: 5
   healthBar: {fileID: 7640249657591166004}
   enemySize: 2
   groundcheck: {fileID: 4989284577874666926}
@@ -288,6 +288,7 @@ MonoBehaviour:
     m_Bits: 512
   playerInRange: 0
   attackRate: 0.2
+  ammo: {fileID: 0}
   sight: {fileID: 930341143}
   sightDistance: 15
   playerInSight: 0
@@ -295,6 +296,7 @@ MonoBehaviour:
   stunned: 0
   stunTime: 2
   speed: 5
+  canMove: 0
   deathEffect: {fileID: 104949974089830332, guid: 02835680d7dceed41aeb94b9a53539f9,
     type: 3}
   attackEffect: {fileID: 1651134098349768456, guid: 29db25d061efae04dae7932544a65cbd,
