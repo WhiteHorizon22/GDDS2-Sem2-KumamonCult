@@ -11,8 +11,8 @@ public class CameraController : MonoBehaviour
 
     public float smoothing;
 
-    public float stageTop;
-    public float stageBottom;
+    public float stageLeft;
+    public float stageRight;
 
     public bool followTarget; //whether following our target or not
 
@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
                 targetPosition = new Vector3(targetPosition.x - followAhead, targetPosition.y, targetPosition.z);
             }
             //transform.position = targetPosition;
-            if (target.transform.position.y > stageBottom && target.transform.position.y < stageTop)
+            if (target.transform.position.x > stageLeft && target.transform.position.x < stageRight)
             {
                 transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.unscaledDeltaTime);
             }
