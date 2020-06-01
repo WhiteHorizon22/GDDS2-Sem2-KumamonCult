@@ -49,7 +49,7 @@ public class StaminaBar : MonoBehaviour
         public Mana()
         {
             manaAmount = 0;
-            manaRegenAmount = 5f;
+            manaRegenAmount = 0f;
         }
         public void Update()
         {

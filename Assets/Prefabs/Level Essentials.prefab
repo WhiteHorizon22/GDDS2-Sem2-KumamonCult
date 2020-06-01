@@ -1256,6 +1256,11 @@ PrefabInstance:
       propertyPath: dashDuration
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7790050236607983680, guid: 848b87241bfa7394b9ab60dfe3c23768,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8706028202019520140, guid: 848b87241bfa7394b9ab60dfe3c23768,
         type: 3}
       propertyPath: m_Name

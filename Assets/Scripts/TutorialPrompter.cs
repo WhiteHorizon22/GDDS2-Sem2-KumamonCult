@@ -27,7 +27,7 @@ public class TutorialPrompter : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {

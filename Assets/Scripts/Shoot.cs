@@ -6,13 +6,13 @@ public class Shoot : StateMachineBehaviour
 {
 
     TouchIntegratedPlayerControl player;
-    RangedEnemy rangedEnemy;
+    EnemyController rangedEnemy;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = FindObjectOfType<TouchIntegratedPlayerControl>();
-        rangedEnemy = animator.GetComponent<RangedEnemy>();
+        rangedEnemy = animator.GetComponent<EnemyController>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

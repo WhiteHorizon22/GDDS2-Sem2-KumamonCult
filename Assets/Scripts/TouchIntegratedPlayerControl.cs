@@ -369,7 +369,7 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.left * standardAttackKnockback);
                 enemy.GetComponent<Rigidbody2D>().AddForce(Vector2.up * standardAttackBoost);
             }
-            if (enemy.tag == "Enemy")
+            if (enemy.tag == "Melee" || enemy.tag == "Ranged")
             {
                 enemy.GetComponent<EnemyController>().TakeDamage(standardAttackDamage);
             }
@@ -391,11 +391,11 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
         //Apply Damage to Detected Enemies
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.tag == "Enemy")
+            if (enemy.tag == "Melee" || enemy.tag == "Ranged")
             {
                 enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(0, uppercutKnockback);
                 enemy.GetComponent<EnemyController>().TakeDamage(uppercutDamage);
-            }
+            }  
             else if (enemy.name.Contains("EnemyFireball"))
             {
                 enemy.GetComponent<EnemyBullet>().Deflected();
@@ -471,7 +471,7 @@ public class TouchIntegratedPlayerControl : MonoBehaviour
     {
         if (usingGroundPound)
         {
-            if (other.tag == "Enemy")
+            if (other.tag == "Melee" || other.tag == "Ranged")
             {
                 if (other.transform.position.x > transform.position.x)
                 {

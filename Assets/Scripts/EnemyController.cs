@@ -33,6 +33,7 @@ public class EnemyController : MonoBehaviour
     public bool playerInRange;
     public float attackRate;
     float nextAttackTime = 0f;
+    public GameObject ammo;
 
     [Header("Sight")]
     public Transform sight;
@@ -87,7 +88,7 @@ public class EnemyController : MonoBehaviour
                     {
                         anim.SetBool("chase", false);
                     }
-                    anim.SetTrigger("attack");
+                    anim.SetTrigger("Attack");
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
             }
@@ -97,6 +98,14 @@ public class EnemyController : MonoBehaviour
                 {
                     if (tag.Contains("Ranged"))
                     {
+                        if (player.transform.position.x > front.transform.position.x)
+                        {
+                            transform.localScale = new Vector3(enemySize, enemySize, transform.localScale.z);
+                        }
+                        else if (player.transform.position.x < front.transform.position.x)
+                        {
+                            transform.localScale = new Vector3(-enemySize, enemySize, transform.localScale.z);
+                        }
                         if (Time.time >= nextAttackTime && isGrounded && !stunned)
                         {
                             anim.SetTrigger("Attack");
@@ -169,7 +178,7 @@ public class EnemyController : MonoBehaviour
         Destroy(Instantiate(attackEffect, rb.transform), 2);
 
         //Play hurt animation
-        anim.SetTrigger("hurt");
+        anim.SetTrigger("Hurt");
 
         if (currentHealth <= 0)
         {
